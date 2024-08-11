@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/TokenRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +109,7 @@
       <updated>1723389618411</updated>
       <workItem from="1723389619507" duration="1657000" />
       <workItem from="1723391808952" duration="4151000" />
-      <workItem from="1723404382475" duration="172000" />
+      <workItem from="1723404382475" duration="430000" />
     </task>
     <servers />
   </component>
