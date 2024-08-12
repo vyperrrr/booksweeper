@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/enums/BusinessErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/handler/ExceptionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe2b4e07-e1aa-456e-bf8b-d85dfee795c9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe2b4e07-e1aa-456e-bf8b-d85dfee795c9/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe2b4e07-e1aa-456e-bf8b-d85dfee795c9/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/BookTransactionHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/Feedback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dto/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/AuthenticationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dto/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/AuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dto/RegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/RegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/handler/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/ExceptionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/handler/GlobalExceptionHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +137,7 @@
       <workItem from="1723469259657" duration="4816000" />
       <workItem from="1723479138750" duration="991000" />
       <workItem from="1723480175273" duration="5881000" />
-      <workItem from="1723498620466" duration="1473000" />
+      <workItem from="1723498620466" duration="3400000" />
     </task>
     <servers />
   </component>
