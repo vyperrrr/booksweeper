@@ -1,17 +1,15 @@
 package com.cicau.book.service;
 
-import com.cicau.book.dto.AuthenticationRequest;
-import com.cicau.book.dto.AuthenticationResponse;
-import com.cicau.book.dto.RegistrationRequest;
+import com.cicau.book.dtos.AuthenticationRequest;
+import com.cicau.book.dtos.AuthenticationResponse;
+import com.cicau.book.dtos.RegistrationRequest;
 import com.cicau.book.entity.Token;
 import com.cicau.book.entity.User;
 import com.cicau.book.enums.EmailTemplateName;
 import com.cicau.book.repository.RoleRepository;
 import com.cicau.book.repository.TokenRepository;
 import com.cicau.book.repository.UserRepository;
-import com.cicau.book.security.JwtService;
 import jakarta.mail.MessagingException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,7 +22,6 @@ import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor

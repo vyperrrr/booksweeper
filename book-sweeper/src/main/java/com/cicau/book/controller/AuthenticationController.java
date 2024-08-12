@@ -1,8 +1,8 @@
 package com.cicau.book.controller;
 
-import com.cicau.book.dto.AuthenticationRequest;
-import com.cicau.book.dto.AuthenticationResponse;
-import com.cicau.book.dto.RegistrationRequest;
+import com.cicau.book.dtos.AuthenticationRequest;
+import com.cicau.book.dtos.AuthenticationResponse;
+import com.cicau.book.dtos.RegistrationRequest;
 import com.cicau.book.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.mail.MessagingException;

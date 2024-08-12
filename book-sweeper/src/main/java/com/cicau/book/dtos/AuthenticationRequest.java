@@ -1,4 +1,4 @@
-package com.cicau.book.dto;
+package com.cicau.book.dtos;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

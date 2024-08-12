@@ -1,4 +1,4 @@
-package com.cicau.book.security;
+package com.cicau.book.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

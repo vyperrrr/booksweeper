@@ -1,4 +1,4 @@
-package com.cicau.book.dto;
+package com.cicau.book.dtos;
 
 import lombok.Builder;
 import lombok.Getter;
