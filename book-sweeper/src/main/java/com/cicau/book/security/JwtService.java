@@ -18,7 +18,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    @Value(("${application.security.jwt.expiration}"))
+    @Value("${application.security.jwt.expiration}")
     private long jwtExpiration;
 
     @Value("${application.security.jwt.secret-key}")
@@ -28,8 +28,11 @@ public class JwtService {
         return generateToken(new HashMap<>(), userDetails);
     }
 
-    private String generateToken(Map<String,Object> claims, UserDetails userDetails) {
-        return buildToken(claims, userDetails, jwtExpiration);
+    public String generateToken(
+            Map<String, Object> extraClaims,
+            UserDetails userDetails
+    ) {
+        return buildToken(extraClaims, userDetails, jwtExpiration);
     }
 
     private String buildToken(Map<String, Object> claims, UserDetails userDetails, long jwtExpiration) {
