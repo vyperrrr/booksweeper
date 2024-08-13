@@ -2,13 +2,18 @@ package com.cicau.book.controller;
 
 import com.cicau.book.dtos.BookRequest;
 import com.cicau.book.dtos.BookResponse;
+import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.service.BookService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("books")
@@ -26,5 +31,14 @@ public class BookController {
     @GetMapping("{bookId}")
     public ResponseEntity<BookResponse> findBookById(@PathVariable("bookId") Long id) {
         return ResponseEntity.ok(bookService.findById(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<PageResponse<BookResponse>> findAllBooks(
+            @RequestParam(name = "page", defaultValue = "0", required = false) int page,
+            @RequestParam(name = "size", defaultValue = "20", required = false) int size,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(bookService.findAll(page, size, connectedUser));
     }
 }

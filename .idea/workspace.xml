@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/BookResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/PageResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +138,9 @@
       <workItem from="1723480175273" duration="5881000" />
       <workItem from="1723498620466" duration="3452000" />
       <workItem from="1723549138672" duration="1232000" />
-      <workItem from="1723554868327" duration="7923000" />
+      <workItem from="1723554868327" duration="7975000" />
+      <workItem from="1723565826246" duration="1000" />
+      <workItem from="1723568823742" duration="1307000" />
     </task>
     <servers />
   </component>
