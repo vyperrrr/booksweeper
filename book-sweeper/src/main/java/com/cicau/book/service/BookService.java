@@ -6,6 +6,7 @@ import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.entity.Book;
 import com.cicau.book.entity.User;
 import com.cicau.book.repository.BookRepository;
+import com.cicau.book.specification.BookSpecification;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import static com.cicau.book.specification.BookSpecification.*;
 
 @Service
 @RequiredArgsConstructor
@@ -54,5 +57,23 @@ public class BookService {
                 pageResult.isLast()
         );
 
+    }
+
+    public PageResponse<BookResponse> findAllByOwner(int page, int size, Authentication connectedUser) {
+        User user = (User) connectedUser.getPrincipal();
+        Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
+        Page<Book> pageResult = bookRepository.findAll(withOwnerId(user.getId()), pageable);
+        List<BookResponse> books = pageResult.stream()
+                .map(bookMapper::toBookResponse)
+                .toList();
+        return new PageResponse<>(
+                books,
+                pageResult.getNumber(),
+                pageResult.getSize(),
+                pageResult.getTotalElements(),
+                pageResult.getTotalPages(),
+                pageResult.isFirst(),
+                pageResult.isLast()
+        );
     }
 }
