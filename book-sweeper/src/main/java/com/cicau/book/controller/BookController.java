@@ -1,5 +1,6 @@
 package com.cicau.book.controller;
 
+import com.cicau.book.dtos.BookRequest;
 import com.cicau.book.service.BookService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -20,7 +21,7 @@ public class BookController {
     private final BookService bookService;
 
     @PostMapping
-    public ResponseEntity<Integer> saveBook(@RequestBody @Valid BookRequest request, Authentication connectedUser) {
+    public ResponseEntity<Long> saveBook(@RequestBody @Valid BookRequest request, Authentication connectedUser) {
         return ResponseEntity.ok(bookService.save(request, connectedUser));
     }
 }
