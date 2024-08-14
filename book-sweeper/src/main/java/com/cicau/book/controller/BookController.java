@@ -2,6 +2,7 @@ package com.cicau.book.controller;
 
 import com.cicau.book.dtos.BookRequest;
 import com.cicau.book.dtos.BookResponse;
+import com.cicau.book.dtos.BorrowedBookResponse;
 import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.service.BookService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -47,5 +48,14 @@ public class BookController {
             Authentication connectedUser
     ) {
         return ResponseEntity.ok(bookService.findAllByOwner(page, size, connectedUser));
+    }
+
+    @GetMapping("/borrowed")
+    public ResponseEntity<PageResponse<BorrowedBookResponse>> findAllBorrowedBooks(
+            @RequestParam(name = "page", defaultValue = "0", required = false) int page,
+            @RequestParam(name = "size", defaultValue = "20", required = false) int size,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(bookService.findAllBorrowedBooks(page, size, connectedUser));
     }
 }

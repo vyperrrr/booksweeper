@@ -2,11 +2,13 @@ package com.cicau.book.service;
 
 import com.cicau.book.dtos.BookRequest;
 import com.cicau.book.dtos.BookResponse;
+import com.cicau.book.dtos.BorrowedBookResponse;
 import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.entity.Book;
+import com.cicau.book.entity.BookTransactionHistory;
 import com.cicau.book.entity.User;
 import com.cicau.book.repository.BookRepository;
-import com.cicau.book.specification.BookSpecification;
+import com.cicau.book.repository.BookTransactionHistoryRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -26,6 +28,7 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;
+    private final BookTransactionHistoryRepository bookTransactionHistoryRepository;
 
     public Long save(BookRequest request, Authentication connectedUser) {
         User user = (User) connectedUser.getPrincipal();
@@ -75,5 +78,25 @@ public class BookService {
                 pageResult.isFirst(),
                 pageResult.isLast()
         );
+    }
+
+    public PageResponse<BorrowedBookResponse> findAllBorrowedBooks(int page, int size, Authentication connectedUser) {
+        User user = (User) connectedUser.getPrincipal();
+        Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
+        Page<BookTransactionHistory> allBorrowedBooks = bookTransactionHistoryRepository.findAllBorrowedBooks(user.getId(), pageable);
+        List<BorrowedBookResponse> bookResponses = allBorrowedBooks.stream()
+                .map(bookMapper::toBorrowedBookResponse)
+                .toList();
+
+        return new PageResponse<>(
+                bookResponses,
+                allBorrowedBooks.getNumber(),
+                allBorrowedBooks.getSize(),
+                allBorrowedBooks.getTotalElements(),
+                allBorrowedBooks.getTotalPages(),
+                allBorrowedBooks.isFirst(),
+                allBorrowedBooks.isLast()
+        );
+
     }
 }

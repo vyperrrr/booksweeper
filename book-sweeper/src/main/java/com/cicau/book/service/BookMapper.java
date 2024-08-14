@@ -2,7 +2,9 @@ package com.cicau.book.service;
 
 import com.cicau.book.dtos.BookRequest;
 import com.cicau.book.dtos.BookResponse;
+import com.cicau.book.dtos.BorrowedBookResponse;
 import com.cicau.book.entity.Book;
+import com.cicau.book.entity.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +33,19 @@ public class BookMapper {
                 .rate(book.getRate())
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
+                .build();
+    }
+
+    public BorrowedBookResponse toBorrowedBookResponse(BookTransactionHistory bookTransactionHistory) {
+        var book = bookTransactionHistory.getBook();
+        return BorrowedBookResponse.builder()
+                .id(book.getId())
+                .title(book.getTitle())
+                .authorName(book.getAuthorName())
+                .isbn(book.getIsbn())
+                .rate(book.getRate())
+                .returned(bookTransactionHistory.isReturned())
+                .returnApproved(bookTransactionHistory.isReturnApproved())
                 .build();
     }
 }
