@@ -7,6 +7,7 @@ import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.entity.Book;
 import com.cicau.book.entity.BookTransactionHistory;
 import com.cicau.book.entity.User;
+import com.cicau.book.exception.OperationNotPermittedException;
 import com.cicau.book.repository.BookRepository;
 import com.cicau.book.repository.BookTransactionHistoryRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -117,5 +118,27 @@ public class BookService {
                 allReturnedBooks.isFirst(),
                 allReturnedBooks.isLast()
         );
+    }
+
+    public Long updateShareableAttribute(Long id, Authentication connectedUser) {
+        User user = (User) connectedUser.getPrincipal();
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Book not found with id " + id));
+        if (!book.getOwner().getId().equals(user.getId())) {
+            throw new OperationNotPermittedException("Since you are not the owner of this book, you cannot update its shareable status");
+        }
+        book.setShareable(!book.isShareable());
+        return bookRepository.save(book).getId();
+    }
+
+    public Long updateArchivedAttribute(Long id, Authentication connectedUser) {
+        User user = (User) connectedUser.getPrincipal();
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Book not found with id " + id));
+        if (!book.getOwner().getId().equals(user.getId())) {
+            throw new OperationNotPermittedException("Since you are not the owner of this book, you cannot update its archived status");
+        }
+        book.setShareable(!book.isArchived());
+        return bookRepository.save(book).getId();
     }
 }
