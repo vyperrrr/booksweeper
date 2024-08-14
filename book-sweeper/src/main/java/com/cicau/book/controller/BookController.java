@@ -99,4 +99,12 @@ public class BookController {
     ) {
         return ResponseEntity.ok(bookService.returnBook(id, connectedUser));
     }
+
+    @PatchMapping("return/approve/{bookId}")
+    public ResponseEntity<Long> approveReturnedBook(
+            @PathVariable("bookId") Long id,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(bookService.approveReturnedBook(id, connectedUser));
+    }
 }
