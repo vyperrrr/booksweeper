@@ -147,7 +147,7 @@ public class BookService {
                 .orElseThrow(() -> new EntityNotFoundException("Book not found with id " + id));
 
         if(book.isArchived() || !book.isShareable())
-            throw new OperationNotPermittedException("This book is not available for borrowing since it is either archived or not shareable");
+            throw new OperationNotPermittedException("This book is not available for borrow since it is either archived or not shareable");
 
         User user = (User) connectedUser.getPrincipal();
 
@@ -167,5 +167,28 @@ public class BookService {
                 .build();
 
         return bookTransactionHistoryRepository.save(newTransaction).getId();
+    }
+
+    public Long returnBook(Long id, Authentication connectedUser) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Book not found with id " + id));
+
+        if(book.isArchived() || !book.isShareable())
+            throw new OperationNotPermittedException("This book is not available for return since it is either archived or not shareable");
+
+        User user = (User) connectedUser.getPrincipal();
+
+        if(book.getOwner().getId().equals(user.getId()))
+            throw new OperationNotPermittedException("You cannot return a book that you own");
+
+        BookTransactionHistory transaction = bookTransactionHistoryRepository.findByBookIdAndUserId(book.getId(), user.getId())
+                .orElseThrow(() -> new EntityNotFoundException("Transaction not found with book id " + id + " and user id " + user.getId()));
+
+        if(transaction.isReturned())
+            throw new OperationNotPermittedException("This book is already returned");
+
+        transaction.setReturned(true);
+
+        return bookTransactionHistoryRepository.save(transaction).getId();
     }
 }
