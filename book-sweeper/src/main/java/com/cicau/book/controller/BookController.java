@@ -5,13 +5,17 @@ import com.cicau.book.dtos.BookResponse;
 import com.cicau.book.dtos.BorrowedBookResponse;
 import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.service.BookService;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.mail.Multipart;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -106,5 +110,16 @@ public class BookController {
             Authentication connectedUser
     ) {
         return ResponseEntity.ok(bookService.approveReturnedBook(id, connectedUser));
+    }
+
+    @PostMapping(value = "/cover/upload/{bookId}", consumes = "multipart/form-data")
+    public ResponseEntity<?> uploadBookCover(
+            @PathVariable("bookId") Long id,
+            @Parameter()
+            @RequestPart("file") MultipartFile file,
+            Authentication connectedUser
+    ) throws IOException {
+        bookService.uploadBookCover(id, file, connectedUser);
+        return ResponseEntity.accepted().build();
     }
 }

@@ -8,6 +8,7 @@ import com.cicau.book.entity.Book;
 import com.cicau.book.entity.BookTransactionHistory;
 import com.cicau.book.entity.User;
 import com.cicau.book.exception.OperationNotPermittedException;
+import com.cicau.book.mapper.BookMapper;
 import com.cicau.book.repository.BookRepository;
 import com.cicau.book.repository.BookTransactionHistoryRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -18,7 +19,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 import static com.cicau.book.specification.BookSpecification.*;
@@ -30,6 +33,7 @@ public class BookService {
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;
     private final BookTransactionHistoryRepository bookTransactionHistoryRepository;
+    private final FileStorageService fileStorageService;
 
     public Long save(BookRequest request, Authentication connectedUser) {
         User user = (User) connectedUser.getPrincipal();
@@ -214,5 +218,19 @@ public class BookService {
         transaction.setReturnApproved(true);
 
         return bookTransactionHistoryRepository.save(transaction).getId();
+    }
+
+    public void uploadBookCover(Long id, MultipartFile file, Authentication connectedUser) throws IOException {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Book not found with id " + id));
+
+        User user = (User) connectedUser.getPrincipal();
+
+        if(!book.getOwner().getId().equals(user.getId()))
+            throw new OperationNotPermittedException("You cannot upload a book cover for a book that you do not own");
+
+        String bookCoverUrl = fileStorageService.upload(file);
+
+        book.setBookCoverUrl(bookCoverUrl);
     }
 }

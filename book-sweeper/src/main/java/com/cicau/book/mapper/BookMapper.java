@@ -1,4 +1,4 @@
-package com.cicau.book.service;
+package com.cicau.book.mapper;
 
 import com.cicau.book.dtos.BookRequest;
 import com.cicau.book.dtos.BookResponse;

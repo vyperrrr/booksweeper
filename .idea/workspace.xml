@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/AWSS3Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a/storage_v2/_src_/database/book_sweeper.Qxlphg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a/storage_v2/_src_/database/book_sweeper.Qxlphg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/BookTransactionHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/BookTransactionHistoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/mapper/BookMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +81,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.cicau.book.service" />
       <recent name="com.cicau.book.exception" />
       <recent name="com.cicau.book.dtos" />
       <recent name="com.cicau.book.repository" />
       <recent name="com.cicau.book.mappers" />
-      <recent name="com.cicau.book.service" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BookSweeperApiApplication">
@@ -143,7 +150,7 @@
       <workItem from="1723575121299" duration="110000" />
       <workItem from="1723577716298" duration="1721000" />
       <workItem from="1723638638434" duration="8249000" />
-      <workItem from="1723661250218" duration="1494000" />
+      <workItem from="1723661250218" duration="9435000" />
     </task>
     <servers />
   </component>

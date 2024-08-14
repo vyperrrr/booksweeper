@@ -38,3 +38,14 @@ application:
       activation-url: http://localhost:3000/activate-account
 server:
     port: 8080
+aws:
+  access:
+    key:
+      id: AKIAVRUVSR5ESOZKOPME
+  secret:
+    access:
+      key: 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
+  s3:
+    region: eu-north-1
+    bucket:
+      name: booksweeperbucket
