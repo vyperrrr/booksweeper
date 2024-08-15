@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a/storage_v2/_src_/database/book_sweeper.Qxlphg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a/storage_v2/_src_/database/book_sweeper.Qxlphg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/BookRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/BookRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/mapper/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Docker.docker-compose.yml.mail-dev: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -148,7 +152,7 @@
       <workItem from="1723673637155" duration="490000" />
       <workItem from="1723674147194" duration="126000" />
       <workItem from="1723719846861" duration="1053000" />
-      <workItem from="1723720920871" duration="9995000" />
+      <workItem from="1723720920871" duration="13212000" />
     </task>
     <servers />
   </component>
@@ -165,5 +169,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
