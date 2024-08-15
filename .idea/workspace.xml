@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/OpenApiConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/FeedbackResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/FeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/FeedbackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/mapper/FeedbackMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/mapper/FeedbackMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/repository/FeedbackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/FeedbackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,35 +43,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml.mail-dev: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BookSweeperApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yml.mail-dev: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BookSweeperApiApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "ts.external.directory.path": "C:\\Users\\gpatr\\Desktop\\book-sweeper-monorepo\\book-sweeper-ui\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.cicau.book.dtos" />
@@ -150,7 +148,7 @@
       <workItem from="1723673637155" duration="490000" />
       <workItem from="1723674147194" duration="126000" />
       <workItem from="1723719846861" duration="1053000" />
-      <workItem from="1723720920871" duration="9580000" />
+      <workItem from="1723720920871" duration="9995000" />
     </task>
     <servers />
   </component>
