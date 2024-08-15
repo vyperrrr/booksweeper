@@ -56,7 +56,6 @@ public class BookService {
                 .map(bookMapper::toBookResponse)
                 .toList();
 
-        System.out.println("books: " + books);
         return new PageResponse<>(
                 books,
                 pageResult.getNumber(),
