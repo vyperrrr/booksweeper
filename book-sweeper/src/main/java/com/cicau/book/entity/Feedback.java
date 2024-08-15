@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "feedback")
 public class Feedback extends BaseEntity {
 
-    private Double note;
+    private Double rate;
     private String comment;
 
     @ManyToOne

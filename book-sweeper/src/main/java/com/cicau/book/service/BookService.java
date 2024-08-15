@@ -234,5 +234,7 @@ public class BookService {
         String bookCoverUrl = s3Service.getUrl(file.getName());
 
         book.setBookCoverUrl(bookCoverUrl);
+
+        bookRepository.save(book);
     }
 }
