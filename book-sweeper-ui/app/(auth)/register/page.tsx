@@ -112,7 +112,7 @@ export default function Page() {
                     <button className="btn btn-accent w-full">Sign Up</button>
                 </form>
                 <div>
-                    <p>Already have an account? <a href="#" className="underline">Sign In</a></p>
+                    <p>Already have an account? <a href="#" className="link">Sign In</a></p>
                 </div>
             </div>
         </div>

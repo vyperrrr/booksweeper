@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { ErrorMessage } from "@hookform/error-message"
 import { useLogin } from "@/lib/mutations";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
     email: z.string().email(),
@@ -12,6 +13,8 @@ const formSchema = z.object({
 })
 
 export default function Page() {
+    const router = useRouter();
+
     const { trigger } = useLogin();
 
     const { formState: { errors }, register , handleSubmit} = useForm<z.infer<typeof formSchema>>({
@@ -19,7 +22,13 @@ export default function Page() {
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        await trigger(values).then((response) => console.log(response))
+        await trigger(values).then(
+            (response) => {
+                if(response.token) {
+                    router.replace("/activate-account");
+                }
+            }
+        );
     }
 
     return (
@@ -84,7 +93,7 @@ export default function Page() {
                     <button className="btn btn-accent w-full">Sign Up</button>
                 </form>
                 <div>
-                    <p>Doesn't have an account yet? <a href="#" className="underline">Sign Up</a></p>
+                    <p>Doesn't have an account yet? <a href="#" className="link">Sign Up</a></p>
                 </div>
             </div>
         </div>
