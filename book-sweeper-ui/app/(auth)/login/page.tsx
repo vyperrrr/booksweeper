@@ -4,61 +4,33 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { ErrorMessage } from "@hookform/error-message"
-import { useRegister } from "@/lib/mutations";
+import { useLogin } from "@/lib/mutations";
 
 const formSchema = z.object({
-    firstName: z.string().min(1),
-    lastName: z.string().min(1),
     email: z.string().email(),
     password: z.string().min(8),
 })
 
 export default function Page() {
-    const { trigger } = useRegister();
+    const { trigger } = useLogin();
 
     const { formState: { errors }, register , handleSubmit} = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        await trigger(values);
+        await trigger(values).then((response) => console.log(response))
     }
 
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
             <div className="card-body space-y-4">
                 <div>
-                    <h2 className="card-title text-3xl font-extrabold">Sign Up</h2>
-                    <p>Create a new account</p>
+                    <h2 className="card-title text-3xl font-extrabold">Sign In</h2>
+                    <p>Log into your account</p>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                     <div className="space-y-2">
-                        <label className="form-control w-full max-w-xs">
-                            <input {...register("firstName")} type="text" placeholder="First name"
-                                   className="input input-bordered w-full max-w-xs"/>
-                            <ErrorMessage
-                                errors={errors}
-                                name="firstName"
-                                render={({ message }) =>
-                                    <div className="label">
-                                        <span className="label-text-alt">{message}</span>
-                                    </div>
-                                }
-                            />
-                        </label>
-                        <label className="form-control w-full max-w-xs">
-                            <input {...register("lastName")} type="text" placeholder="Last name"
-                                   className="input input-bordered w-full max-w-xs"/>
-                            <ErrorMessage
-                                errors={errors}
-                                name="lastName"
-                                render={({ message }) =>
-                                    <div className="label">
-                                        <span className="label-text-alt">{message}</span>
-                                    </div>
-                                }
-                            />
-                        </label>
                         <label className="form-control w-full max-w-xs">
                             <label className="input input-bordered flex items-center gap-2">
                                 <svg
@@ -112,7 +84,7 @@ export default function Page() {
                     <button className="btn btn-accent w-full">Sign Up</button>
                 </form>
                 <div>
-                    <p>Already have an account? <a href="#" className="underline">Sign In</a></p>
+                    <p>Doesn't have an account yet? <a href="#" className="underline">Sign Up</a></p>
                 </div>
             </div>
         </div>

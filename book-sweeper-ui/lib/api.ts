@@ -10,3 +10,11 @@ export const registerUser = async (url: string, { arg } : { arg:  {
 ) => {
     return axiosInstance.post(url, arg).then(res => res.data)
 }
+
+export const loginUser = async (url: string, { arg } : { arg:  {
+        email: string,
+        password: string
+    }}
+) => {
+    return axiosInstance.post(url, arg).then(res => res.data)
+}
