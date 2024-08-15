@@ -1,6 +1,8 @@
 package com.cicau.book.controller;
 
 import com.cicau.book.dtos.FeedbackRequest;
+import com.cicau.book.dtos.FeedbackResponse;
+import com.cicau.book.dtos.PageResponse;
 import com.cicau.book.entity.Feedback;
 import com.cicau.book.service.FeedbackService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -8,10 +10,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/feedback")
@@ -24,5 +23,15 @@ public class FeedbackController {
     @PostMapping
     public ResponseEntity<Long> saveFeedback(@RequestBody @Valid FeedbackRequest feedback, Authentication connectedUser) {
         return ResponseEntity.ok(feedbackService.save(feedback, connectedUser));
+    }
+
+    @GetMapping("/book/{bookId}")
+    public ResponseEntity<PageResponse<FeedbackResponse>> findAllFeedbacksByBook(
+            @RequestParam(name = "page", defaultValue = "0", required = false) int page,
+            @RequestParam(name = "size", defaultValue = "20", required = false) int size,
+            @PathVariable(name = "bookId") Long bookId,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(feedbackService.findAllFeedbacksByBook(page, size, bookId, connectedUser));
     }
 }
