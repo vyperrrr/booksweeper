@@ -49,3 +49,6 @@ aws:
     region: eu-north-1
     bucket:
       name: booksweeperbucket
+  java:
+    v1:
+      disableDeprecationAnnouncement: true

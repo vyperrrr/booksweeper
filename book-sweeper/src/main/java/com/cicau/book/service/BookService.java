@@ -33,7 +33,7 @@ public class BookService {
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;
     private final BookTransactionHistoryRepository bookTransactionHistoryRepository;
-    private final FileStorageService fileStorageService;
+    private final S3Service s3Service;
 
     public Long save(BookRequest request, Authentication connectedUser) {
         User user = (User) connectedUser.getPrincipal();
@@ -220,7 +220,7 @@ public class BookService {
         return bookTransactionHistoryRepository.save(transaction).getId();
     }
 
-    public void uploadBookCover(Long id, MultipartFile file, Authentication connectedUser) throws IOException {
+    public void uploadBookCover(Long id, MultipartFile file, Authentication connectedUser) {
         Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Book not found with id " + id));
 
@@ -229,7 +229,9 @@ public class BookService {
         if(!book.getOwner().getId().equals(user.getId()))
             throw new OperationNotPermittedException("You cannot upload a book cover for a book that you do not own");
 
-        String bookCoverUrl = fileStorageService.upload(file);
+        s3Service.putObject(file);
+
+        String bookCoverUrl = s3Service.getUrl(file.getName());
 
         book.setBookCoverUrl(bookCoverUrl);
     }
