@@ -6,6 +6,8 @@ import { z } from "zod"
 import { ErrorMessage } from "@hookform/error-message"
 import { useLoginUser } from "@/lib/mutations";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import useAuthStore from "@/hooks/use-auth-store";
 
 const formSchema = z.object({
     email: z.string().email(),
@@ -17,18 +19,19 @@ export default function Page() {
 
     const { trigger } = useLoginUser();
 
+    const { persistToken, login } = useAuthStore();
+
     const { formState: { errors }, register , handleSubmit} = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        await trigger(values).then(
-            (response) => {
-                if(response.token) {
-                    router.replace("/");
-                }
-            }
-        );
+        const data = await trigger(values);
+        if(data.token) {
+            persistToken(data.token);
+            login();
+            router.replace("/");
+        }
     }
 
     return (
@@ -93,7 +96,7 @@ export default function Page() {
                     <button className="btn btn-accent w-full">Sign Up</button>
                 </form>
                 <div>
-                    <p>Doesn't have an account yet? <a href="#" className="link">Sign Up</a></p>
+                    <p>Doesn't have an account yet? <Link href="/register" className="link">Sign Up</Link></p>
                 </div>
             </div>
         </div>

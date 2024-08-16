@@ -6,6 +6,7 @@ import { z } from "zod"
 import { ErrorMessage } from "@hookform/error-message"
 import { useRegisterUser } from "@/lib/mutations";
 import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 const formSchema = z.object({
     firstName: z.string().min(1),
@@ -117,7 +118,7 @@ export default function Page() {
                     <button className="btn btn-accent w-full">Sign Up</button>
                 </form>
                 <div>
-                    <p>Already have an account? <a href="#" className="link">Sign In</a></p>
+                    <p>Already have an account? <Link href="/login" className="link">Sign In</Link></p>
                 </div>
             </div>
         </div>
