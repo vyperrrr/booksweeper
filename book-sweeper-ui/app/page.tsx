@@ -1,7 +1,11 @@
+import {Books} from "@/app/books";
+
 export default function Home() {
+
+
     return (
         <div>
-            Hello, world!
+            <Books />
         </div>
     );
 }

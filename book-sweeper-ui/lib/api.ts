@@ -1,4 +1,5 @@
 import { axiosInstance } from "@/lib/axios";
+import axios from "axios";
 
 export const registerUser = async (url: string, { arg } : { arg:  {
         firstName: string,
@@ -24,4 +25,8 @@ export const verifyOTP = async (url: string, { arg } : { arg:  {
     }}
 ) => {
     return axiosInstance.get(url+`?code=${arg.code}`).then(res => res.data)
+}
+
+export const getBooks = async (url: string) => {
+    return axiosInstance.get(url).then(res => res.data)
 }
