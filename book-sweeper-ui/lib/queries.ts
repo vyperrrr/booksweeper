@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import {getBook, getBooks} from "@/lib/api";
+import {getBook, getBooks, getOwnedBooks} from "@/lib/api";
 
 type Book = {
     id: number;
@@ -30,4 +30,8 @@ export const useBooks = () => {
 
 export const useBook = (id: string) => {
     return useSWR<Book>(`/books/${id}`, getBook);
+}
+
+export const useOwnedBooks = () => {
+    return useSWR<Page<Book>>("/books/owned", getOwnedBooks);
 }

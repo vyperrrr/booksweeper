@@ -34,3 +34,7 @@ export const getBooks = async (url: string) => {
 export const getBook = async (url: string) => {
     return axiosInstance.get(url).then(res => res.data)
 }
+
+export const getOwnedBooks = async (url: string) => {
+    return axiosInstance.get(url).then(res => res.data)
+}
