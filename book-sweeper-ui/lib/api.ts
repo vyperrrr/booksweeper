@@ -30,3 +30,7 @@ export const verifyOTP = async (url: string, { arg } : { arg:  {
 export const getBooks = async (url: string) => {
     return axiosInstance.get(url).then(res => res.data)
 }
+
+export const getBook = async (url: string) => {
+    return axiosInstance.get(url).then(res => res.data)
+}
