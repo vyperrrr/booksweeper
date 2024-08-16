@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/books-not-found.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-sweeper-ui/assets/book.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a/storage_v2/_src_/database/book_sweeper.Qxlphg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/185dce04-eedc-4703-b849-f85e031f2c6a/storage_v2/_src_/database/book_sweeper.Qxlphg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/profile/borrowed-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/my-borrowed-books.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/profile/my-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/my-books.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/profile/returned-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/my-returned-books.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/components/navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/components/navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/lib/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/lib/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/lib/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/lib/queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/BookController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +33,8 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -55,6 +70,7 @@
     "Spring Boot.BookSweeperApiApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gpatr/Desktop/book-sweeper-monorepo/book-sweeper-ui/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,6 +79,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "C:\\Users\\gpatr\\Desktop\\book-sweeper-monorepo\\book-sweeper-ui\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -79,6 +96,13 @@
       <recent name="com.cicau.book.service" />
       <recent name="com.cicau.book.exception" />
       <recent name="com.cicau.book.mappers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\book-sweeper-ui\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\book-sweeper-ui\app\books\[id]" />
+      <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\book-sweeper-ui\app\books" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BookSweeperApiApplication">
@@ -147,7 +171,11 @@
       <workItem from="1723673637155" duration="490000" />
       <workItem from="1723674147194" duration="126000" />
       <workItem from="1723719846861" duration="1053000" />
-      <workItem from="1723720920871" duration="13474000" />
+      <workItem from="1723720920871" duration="13499000" />
+      <workItem from="1723742244688" duration="1618000" />
+      <workItem from="1723743917533" duration="14508000" />
+      <workItem from="1723808668820" duration="20318000" />
+      <workItem from="1723831031636" duration="4408000" />
     </task>
     <servers />
   </component>

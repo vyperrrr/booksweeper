@@ -1,6 +1,8 @@
 // @flow 
 import * as React from 'react';
 import Link from "next/link";
+import Image from "next/image";
+import book from "@/assets/book.svg";
 
 type Props = {
     
@@ -27,7 +29,10 @@ export const Navigation = (props: Props) => {
                             </svg>
                         </label>
                     </div>
-                    <div className="mx-2 flex-1 px-2">Book Sweeper</div>
+                    <div className="mx-2 flex-1 px-2 gap-2 justify-end lg:justify-start">
+                        <Image alt="book" src={book.src} height={book.height} width={book.width} className="h-8 w-8"/>
+                        <span className="font-extrabold text-sm tracking-tight bg-gradient-to-r from-primary to-danger bg-clip-text text-transparent">booksweeper</span>
+                    </div>
                     <div className="hidden flex-none lg:block">
                         <ul className="menu menu-horizontal">
                             {/* Navbar menu content here */}
@@ -36,8 +41,6 @@ export const Navigation = (props: Props) => {
                         </ul>
                     </div>
                 </div>
-                {/* Page content here */}
-                Content
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>

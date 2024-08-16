@@ -1,15 +1,17 @@
-"use client";
-
-import {useOwnedBooks} from "@/lib/queries";
+// @flow 
+import * as React from 'react';
+import {useBorrowedBooks} from "@/lib/queries";
 import Link from "next/link";
-import * as React from "react";
 import {BooksNotFound} from "@/app/profile/books-not-found";
 
-export const MyBooks = () => {
-    const {data, error} = useOwnedBooks();
+type Props = {
+    
+};
+export const MyBorrowedBooks = (props: Props) => {
+    const { data, error } = useBorrowedBooks();
 
-    if (data?.content.length === 0) {
-        return <BooksNotFound title="You have not added any books yet"/>
+    if(data?.content.length === 0) {
+        return <BooksNotFound title="You have not borrowed any books yet" />
     }
 
     return (

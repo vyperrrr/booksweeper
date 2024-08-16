@@ -38,3 +38,11 @@ export const getBook = async (url: string) => {
 export const getOwnedBooks = async (url: string) => {
     return axiosInstance.get(url).then(res => res.data)
 }
+
+export const getBorrowedBooks = async (url: string) => {
+    return axiosInstance.get(url).then(res => res.data)
+}
+
+export const getReturnedBooks = async (url: string) => {
+    return axiosInstance.get(url).then(res => res.data)
+}

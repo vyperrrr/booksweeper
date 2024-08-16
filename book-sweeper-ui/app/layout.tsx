@@ -22,10 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dim">
       <body className={inter.className}>
-      <Navigation />
-      <main className="max-w-7xl mx-auto">{children}</main>
-      <ToastContainer />
+      <div className="max-w-[1920px] mx-auto">
+          <Navigation />
+          <main className="max-w-7xl mx-auto mt-20 pb-40">{children}</main>
+          <ToastContainer />
+      </div>
       </body>
+
     </html>
   );
 }
