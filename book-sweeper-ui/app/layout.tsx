@@ -5,6 +5,7 @@ import React from "react";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Navigation} from "@/components/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="lofi">
+    <html lang="en" data-theme="dim">
       <body className={inter.className}>
-      {children}
+      <Navigation />
+      <main className="max-w-7xl mx-auto">{children}</main>
       <ToastContainer />
       </body>
     </html>
