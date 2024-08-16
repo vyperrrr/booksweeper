@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { ErrorMessage } from "@hookform/error-message"
-import { useLogin } from "@/lib/mutations";
+import { useLoginUser } from "@/lib/mutations";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
@@ -15,7 +15,7 @@ const formSchema = z.object({
 export default function Page() {
     const router = useRouter();
 
-    const { trigger } = useLogin();
+    const { trigger } = useLoginUser();
 
     const { formState: { errors }, register , handleSubmit} = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),

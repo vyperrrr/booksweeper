@@ -4,7 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { ErrorMessage } from "@hookform/error-message"
-import { useRegister } from "@/lib/mutations";
+import { useRegisterUser } from "@/lib/mutations";
+import {useRouter} from "next/navigation";
 
 const formSchema = z.object({
     firstName: z.string().min(1),
@@ -14,14 +15,18 @@ const formSchema = z.object({
 })
 
 export default function Page() {
-    const { trigger } = useRegister();
+    const router = useRouter();
+
+    const { trigger } = useRegisterUser();
 
     const { formState: { errors }, register , handleSubmit} = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        await trigger(values);
+        await trigger(values).then(() => {
+            router.replace("/activate-account");
+        })
     }
 
     return (

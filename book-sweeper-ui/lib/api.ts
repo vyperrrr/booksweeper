@@ -18,3 +18,10 @@ export const loginUser = async (url: string, { arg } : { arg:  {
 ) => {
     return axiosInstance.post(url, arg).then(res => res.data)
 }
+
+export const verifyOTP = async (url: string, { arg } : { arg:  {
+       code: string;
+    }}
+) => {
+    return axiosInstance.get(url+`?code=${arg.code}`).then(res => res.data)
+}
