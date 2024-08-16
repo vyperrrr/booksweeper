@@ -25,7 +25,7 @@ export default function Page() {
         await trigger(values).then(
             (response) => {
                 if(response.token) {
-                    router.replace("/activate-account");
+                    router.replace("/");
                 }
             }
         );
