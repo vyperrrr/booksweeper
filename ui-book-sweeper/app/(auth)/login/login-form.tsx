@@ -41,6 +41,7 @@ export const LoginForm = () => {
         }, {
             onSuccess: (res) => {
                 auth.login(res.data.token!);
+                console.log("asd");
             },
         });
     }

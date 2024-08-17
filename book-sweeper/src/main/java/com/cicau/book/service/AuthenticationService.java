@@ -123,23 +123,15 @@ public class AuthenticationService {
     }
 
     public void activateAccount(String code) throws MessagingException {
-        Token savedCode = tokenRepository.findByToken(code)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid activation code"));
 
-        if(LocalDateTime.now().isAfter(savedCode.getExpiresAt())) {
-            sendValidationEmail(savedCode.getUser());
-            throw new RuntimeException("Activation code expired, new code sent to your email");
-        }
+    }
 
-        var user = userRepository.findById(savedCode.getUser().getId())
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-
-        user.setEnabled(true);
-
-        userRepository.save(user);
-
-        savedCode.setValidatedAt(LocalDateTime.now());
-
-        tokenRepository.save(savedCode);
+    public void logout(HttpServletResponse response) {
+        Cookie cookie = new Cookie("access_token", null);
+        cookie.setHttpOnly(true);
+        cookie.setSecure(true);
+        cookie.setPath("/");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
     }
 }

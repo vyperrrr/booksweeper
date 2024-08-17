@@ -3,6 +3,7 @@ package com.cicau.book.security;
 import com.cicau.book.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -31,14 +32,27 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             return;
         }
 
-        final String authHeader = request.getHeader("Authorization");
+        final Cookie[] cookies = request.getCookies();
 
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        if (cookies == null) {
             filterChain.doFilter(request, response);
             return;
         }
 
-        final String jwtToken = authHeader.substring(7);
+        String jwtToken = null;
+
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("access_token")) {
+                jwtToken = cookie.getValue();
+                break;
+            }
+        }
+
+        if(jwtToken == null) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         final String email = jwtService.extractEmail(jwtToken);
 
         if(email != null && SecurityContextHolder.getContext().getAuthentication() == null) {

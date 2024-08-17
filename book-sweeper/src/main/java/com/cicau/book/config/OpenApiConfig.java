@@ -36,19 +36,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         url = "https://book-sweeper.herokuapp.com/api/v1"
                 )
         },
-        security = {
-                @SecurityRequirement(
-                        name = "bearerAuth"
-                )
-        }
-)
-@SecurityScheme(
-        name = "bearerAuth",
-        description = "Bearer token",
-        scheme = "bearer",
-        type = SecuritySchemeType.HTTP,
-        bearerFormat = "JWT",
-        in = SecuritySchemeIn.HEADER
+        security = {}
 )
 public class OpenApiConfig {
 }

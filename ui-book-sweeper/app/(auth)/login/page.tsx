@@ -11,9 +11,11 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import Link from "next/link";
+import {cookies} from "next/headers";
 
 
 export default function Page() {
+    console.log(cookies().get("access_token"));
     return (
         <div className="flex h-screen justify-center items-center">
             <Card className="w-full max-w-sm">

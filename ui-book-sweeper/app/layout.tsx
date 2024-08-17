@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import {ThemeProvider} from "@/components/theme-provider";
 import ReactQueryProvider from "@/components/query-client-provider";
+import { CookiesProvider } from 'next-client-cookies/server';
 import React from "react";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,9 +28,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
       >
-          <ReactQueryProvider>
-            {children}
-          </ReactQueryProvider>
+          <CookiesProvider>
+              <ReactQueryProvider>
+                  {children}
+              </ReactQueryProvider>
+          </CookiesProvider>
       </ThemeProvider>
       </body>
     </html>

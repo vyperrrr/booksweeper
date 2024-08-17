@@ -6,6 +6,7 @@ import com.cicau.book.dtos.RegistrationRequest;
 import com.cicau.book.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.mail.MessagingException;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +32,12 @@ public class AuthenticationController {
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody @Valid AuthenticationRequest request, HttpServletResponse response) {
         return ResponseEntity.ok(authenticationService.authenticate(request, response));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(HttpServletResponse response) {
+        authenticationService.logout(response);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/activate-account")
