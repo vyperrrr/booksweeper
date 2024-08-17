@@ -1,22 +1,22 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import {zodResolver} from "@hookform/resolvers/zod"
+import {useForm} from "react-hook-form"
+import {z} from "zod"
 
-import { Button } from "@/components/ui/button"
+import {Button} from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import {Input} from "@/components/ui/input"
 
-import { FcGoogle } from "react-icons/fc";
+import {FcGoogle} from "react-icons/fc";
+import {useAuthenticate} from "@/hooks/use-authenticate";
 
 const formSchema = z.object({
     email: z.string().email({
@@ -27,15 +27,20 @@ const formSchema = z.object({
 
 export const LoginForm = () => {
 
+    const {mutate} = useAuthenticate();
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     })
 
-    // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        mutate({
+            authenticationRequest: values,
+        }, {
+            onSuccess: (res) => {
+                console.log(res);
+            },
+        });
     }
 
     return (
@@ -77,9 +82,8 @@ export const LoginForm = () => {
                 <div className="flex-1 border-t border-muted"/>
             </div>
             <Button variant="outline" className="w-full gap-2">
-                <FcGoogle /> Sign in with Google
+                <FcGoogle/> Sign in with Google
             </Button>
         </div>
-
-)
+    )
 };
