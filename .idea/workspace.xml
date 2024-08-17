@@ -5,49 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/login-form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/query-client-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/label.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/openapitools.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator-ignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator/FILES" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator/VERSION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/authentication-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/book-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/feedback-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/base.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/common.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/configuration.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/git_push.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/authentication-request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/authentication-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/book-request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/book-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/borrowed-book-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/feedback-request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/feedback-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/page-response-book-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/page-response-borrowed-book-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/page-response-feedback-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/registration-request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/authentication-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/book-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/feedback-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/dtos/AuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/AuthenticationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +173,7 @@
       <workItem from="1723853424099" duration="401000" />
       <workItem from="1723893848469" duration="6796000" />
       <workItem from="1723902982010" duration="341000" />
-      <workItem from="1723903350621" duration="10185000" />
+      <workItem from="1723903350621" duration="14785000" />
     </task>
     <servers />
   </component>
