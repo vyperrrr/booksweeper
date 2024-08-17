@@ -123,7 +123,20 @@ public class AuthenticationService {
     }
 
     public void activateAccount(String code) throws MessagingException {
+        Token savedToken = tokenRepository.findByToken(code)
+                .orElseThrow(() -> new RuntimeException("Invalid code"));
+        if (LocalDateTime.now().isAfter(savedToken.getExpiresAt())) {
+            sendValidationEmail(savedToken.getUser());
+            throw new RuntimeException("Activation code has expired. A new code has been send to the same email address");
+        }
 
+        var user = userRepository.findById(savedToken.getUser().getId())
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        user.setEnabled(true);
+        userRepository.save(user);
+
+        savedToken.setValidatedAt(LocalDateTime.now());
+        tokenRepository.save(savedToken);
     }
 
     public void logout(HttpServletResponse response) {
