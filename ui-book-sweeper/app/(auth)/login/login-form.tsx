@@ -17,6 +17,7 @@ import {Input} from "@/components/ui/input"
 
 import {FcGoogle} from "react-icons/fc";
 import {useAuthenticate} from "@/hooks/use-authenticate";
+import useAuthStore from "@/store/use-auth-store";
 
 const formSchema = z.object({
     email: z.string().email({
@@ -26,6 +27,7 @@ const formSchema = z.object({
 })
 
 export const LoginForm = () => {
+    const auth = useAuthStore();
 
     const {mutate} = useAuthenticate();
 
@@ -38,7 +40,7 @@ export const LoginForm = () => {
             authenticationRequest: values,
         }, {
             onSuccess: (res) => {
-                console.log(res);
+                auth.login(res.data.token!);
             },
         });
     }
