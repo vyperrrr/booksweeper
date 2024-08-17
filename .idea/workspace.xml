@@ -5,14 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/book-sweeper-ui/app/books/upload/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/login-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/query-client-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/label.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/openapitools.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator-ignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator/FILES" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator/VERSION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/authentication-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/book-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/feedback-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/base.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/common.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/git_push.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/authentication-request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/authentication-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/book-request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/book-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/borrowed-book-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/feedback-request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/feedback-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/page-response-book-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/page-response-borrowed-book-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/page-response-feedback-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/registration-request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/authentication-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/book-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/feedback-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/user-client/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/books/books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/books/books.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/profile/my-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/my-books.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/app/profile/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/components/navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/components/navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +61,9 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="TypeScript File" />
+        <option value="OpenAPI" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -49,39 +85,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Docker.docker-compose.yml.mail-dev: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BookSweeperApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gpatr/Desktop/book-sweeper-monorepo/book-sweeper-ui/assets&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\gpatr\\Desktop\\book-sweeper-monorepo\\book-sweeper-ui\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.docker-compose.yml.mail-dev: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "OpenAPI/Swagger Code Generator.openapi.json.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BookSweeperApiApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gpatr/Desktop/book-sweeper-monorepo/book-sweeper-ui/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editing.templates",
+    "ts.external.directory.path": "C:\\Users\\gpatr\\Desktop\\book-sweeper-monorepo\\ui-book-sweeper\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.cicau.book.dtos" />
@@ -94,11 +131,12 @@
       <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\book-sweeper-ui\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\ui-book-sweeper" />
       <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\book-sweeper-ui\app\books\[id]" />
       <recent name="C:\Users\gpatr\Desktop\book-sweeper-monorepo\book-sweeper-ui\app\books" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BookSweeperApiApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="BookSweeperApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="book-sweeper" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cicau.book.BookSweeperApiApplication" />
@@ -170,6 +208,10 @@
       <workItem from="1723808668820" duration="20318000" />
       <workItem from="1723831031636" duration="9523000" />
       <workItem from="1723850599167" duration="1748000" />
+      <workItem from="1723853424099" duration="401000" />
+      <workItem from="1723893848469" duration="6796000" />
+      <workItem from="1723902982010" duration="341000" />
+      <workItem from="1723903350621" duration="10185000" />
     </task>
     <servers />
   </component>
