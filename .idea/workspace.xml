@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/role.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(auth)/login/login-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator/FILES" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/.openapi-generator/FILES" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/authentication-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/authentication-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/book-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/book-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/feedback-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/api/feedback-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/authentication-response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/authentication-response.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/shared/api/axios-client/models/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +184,8 @@
       <workItem from="1723893848469" duration="6796000" />
       <workItem from="1723902982010" duration="341000" />
       <workItem from="1723903350621" duration="17577000" />
-      <workItem from="1723931000400" duration="1697000" />
+      <workItem from="1723931000400" duration="2853000" />
+      <workItem from="1723982842331" duration="7531000" />
     </task>
     <servers />
   </component>

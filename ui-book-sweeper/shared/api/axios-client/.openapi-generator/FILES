@@ -1,6 +1,5 @@
 .gitignore
 .npmignore
-.openapi-generator-ignore
 api.ts
 api/authentication-api.ts
 api/book-api.ts
@@ -22,3 +21,4 @@ models/page-response-book-response.ts
 models/page-response-borrowed-book-response.ts
 models/page-response-feedback-response.ts
 models/registration-request.ts
+models/role.ts

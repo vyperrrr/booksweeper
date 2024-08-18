@@ -73,8 +73,8 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(claims, (User) auth.getPrincipal());
 
         Cookie cookie = new Cookie("access_token", jwtToken);
-        cookie.setHttpOnly(true);
-        cookie.setSecure(true);
+        cookie.setHttpOnly(false);
+        cookie.setSecure(false);
         cookie.setPath("/");
         response.addCookie(cookie);
 

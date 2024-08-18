@@ -13,37 +13,36 @@
  */
 
 
-import { Role } from './role';
 
 /**
  * 
  * @export
- * @interface AuthenticationResponse
+ * @interface Role
  */
-export interface AuthenticationResponse {
+export interface Role {
+    /**
+     * 
+     * @type {number}
+     * @memberof Role
+     */
+    'id'?: number;
     /**
      * 
      * @type {string}
-     * @memberof AuthenticationResponse
+     * @memberof Role
      */
-    'firstName'?: string;
+    'name'?: string;
     /**
      * 
      * @type {string}
-     * @memberof AuthenticationResponse
+     * @memberof Role
      */
-    'lastName'?: string;
+    'createdAt'?: string;
     /**
      * 
      * @type {string}
-     * @memberof AuthenticationResponse
+     * @memberof Role
      */
-    'email'?: string;
-    /**
-     * 
-     * @type {Array<Role>}
-     * @memberof AuthenticationResponse
-     */
-    'roles'?: Array<Role>;
+    'updatedAt'?: string;
 }
 

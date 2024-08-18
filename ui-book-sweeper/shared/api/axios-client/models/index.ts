@@ -9,3 +9,4 @@ export * from './page-response-book-response';
 export * from './page-response-borrowed-book-response';
 export * from './page-response-feedback-response';
 export * from './registration-request';
+export * from './role';
