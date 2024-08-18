@@ -30,10 +30,9 @@ export default function RootLayout({
         >
             <ReactQueryProvider>
                 <Navigation />
-                <main className="container px-4 md:px-6">
-
+                <main className="container py-8 md:py-12">
+                    {children}
                 </main>
-                {children}
             </ReactQueryProvider>
         </ThemeProvider>
         </body>
