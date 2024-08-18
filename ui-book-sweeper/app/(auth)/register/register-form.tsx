@@ -33,7 +33,7 @@ const formSchema = z.object({
 export const RegisterForm = () => {
     const router = useRouter();
 
-    const { mutate } = useRegister();
+    const {mutate} = useRegister();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -60,7 +60,7 @@ export const RegisterForm = () => {
                             <FormItem>
                                 <FormLabel>First name</FormLabel>
                                 <FormControl>
-                                    <Input {...field} placeholder="John" />
+                                    <Input {...field} placeholder="John"/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
@@ -73,7 +73,7 @@ export const RegisterForm = () => {
                             <FormItem>
                                 <FormLabel>Last name</FormLabel>
                                 <FormControl>
-                                    <Input {...field} placeholder="Doe" />
+                                    <Input {...field} placeholder="Doe"/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
@@ -86,7 +86,7 @@ export const RegisterForm = () => {
                             <FormItem>
                                 <FormLabel>Email</FormLabel>
                                 <FormControl>
-                                    <Input {...field} placeholder="example@email.com" />
+                                    <Input {...field} placeholder="example@email.com"/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
@@ -99,7 +99,7 @@ export const RegisterForm = () => {
                             <FormItem>
                                 <FormLabel>Password</FormLabel>
                                 <FormControl>
-                                    <Input type="password" {...field} placeholder="********" />
+                                    <Input type="password" {...field} placeholder="********"/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>

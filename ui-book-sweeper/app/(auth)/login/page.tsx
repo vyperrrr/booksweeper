@@ -26,7 +26,7 @@ export default function Page() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <LoginForm />
+                    <LoginForm/>
                 </CardContent>
                 <CardFooter className="justify-between text-sm">
                     <p>Don't have an account?</p>

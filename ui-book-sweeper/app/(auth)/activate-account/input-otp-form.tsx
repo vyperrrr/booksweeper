@@ -29,7 +29,7 @@ const formSchema = z.object({
 })
 
 export const InputOTPForm = () => {
-    const { mutate } = useConfirm();
+    const {mutate} = useConfirm();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),

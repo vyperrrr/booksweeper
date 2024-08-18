@@ -4,6 +4,7 @@ import "./globals.css";
 import {ThemeProvider} from "@/components/theme-provider";
 import ReactQueryProvider from "@/components/query-client-provider";
 import React from "react";
+import {Navigation} from "@/components/navigation";
 
 
 const inter = Inter({subsets: ["latin"]});
@@ -28,6 +29,10 @@ export default function RootLayout({
             disableTransitionOnChange
         >
             <ReactQueryProvider>
+                <Navigation />
+                <main className="container px-4 md:px-6">
+
+                </main>
                 {children}
             </ReactQueryProvider>
         </ThemeProvider>

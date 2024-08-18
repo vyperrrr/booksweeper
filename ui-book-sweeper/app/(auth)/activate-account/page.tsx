@@ -16,7 +16,7 @@ export default function Page() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <InputOTPForm />
+                    <InputOTPForm/>
                 </CardContent>
                 <CardFooter className="justify-between text-sm">
                     <p>Didn't receive the code?</p>
