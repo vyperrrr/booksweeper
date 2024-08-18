@@ -18,18 +18,22 @@ import {Input} from "@/components/ui/input"
 import {FcGoogle} from "react-icons/fc";
 import {useAuthenticate} from "@/hooks/use-authenticate";
 import useAuthStore from "@/store/use-auth-store";
+import {useRegister} from "@/hooks/use-register";
+import {useRouter} from "next/navigation";
 
 const formSchema = z.object({
+    firstName: z.string().min(1),
+    lastName: z.string().min(1),
     email: z.string().email({
         message: "Invalid email address",
     }),
     password: z.string().min(8),
 })
 
-export const LoginForm = () => {
-    const auth = useAuthStore();
+export const RegisterForm = () => {
+    const router = useRouter();
 
-    const {mutate} = useAuthenticate();
+    const { mutate } = useRegister();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -37,11 +41,11 @@ export const LoginForm = () => {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         mutate({
-            authenticationRequest: values,
+            registrationRequest: values,
         }, {
-            onSuccess: (res) => {
-                console.log("asd");
-            },
+            onSuccess: () => {
+                router.push("/activate-account")
+            }
         });
     }
 
@@ -49,6 +53,32 @@ export const LoginForm = () => {
         <div className="space-y-2">
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                    <FormField
+                        control={form.control}
+                        name="firstName"
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>First name</FormLabel>
+                                <FormControl>
+                                    <Input {...field} placeholder="John" />
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="lastName"
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Last name</FormLabel>
+                                <FormControl>
+                                    <Input {...field} placeholder="Doe" />
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
                     <FormField
                         control={form.control}
                         name="email"
@@ -78,14 +108,6 @@ export const LoginForm = () => {
                     <Button type="submit" className="w-full">Submit</Button>
                 </form>
             </Form>
-            <div className="relative flex items-center py-2">
-                <div className="flex-1 border-t border-muted"/>
-                <span className="mx-2 text-muted-foreground">OR</span>
-                <div className="flex-1 border-t border-muted"/>
-            </div>
-            <Button variant="outline" className="w-full gap-2">
-                <FcGoogle/> Sign in with Google
-            </Button>
         </div>
     )
 };
