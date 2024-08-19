@@ -10,6 +10,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export const Navigation = () => {
     return (
@@ -54,7 +55,10 @@ export const Navigation = () => {
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
-
+                    <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
                 </div>
             </div>
         </header>
