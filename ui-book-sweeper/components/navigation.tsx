@@ -3,6 +3,14 @@ import {BookIcon, PaintbrushIcon, PlusIcon, SearchIcon} from "lucide-react";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
+
+
 export const Navigation = () => {
     return (
         <header className="sticky top-0 z-20 bg-background/80 backdrop-blur">
@@ -34,9 +42,19 @@ export const Navigation = () => {
                             className="h-9 w-48 rounded-md bg-muted pl-8 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
-                    <Button variant="secondary" size="sm">
-                        <PlusIcon className="h-4 w-4"/>
-                    </Button>
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <Button variant="secondary" size="sm">
+                                    <PlusIcon className="h-4 w-4"/>
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Add a book to your library</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+
                 </div>
             </div>
         </header>
