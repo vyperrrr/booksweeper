@@ -5,6 +5,8 @@ import {ThemeProvider} from "@/components/theme-provider";
 import ReactQueryProvider from "@/components/query-client-provider";
 import React from "react";
 import {Navigation} from "@/components/navigation";
+import {Footer} from "@/components/footer";
+import {cn} from "@/lib/utils";
 
 
 const inter = Inter({subsets: ["latin"]});
@@ -21,7 +23,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body className={inter.className}>
+        <body className={cn(inter.className)}>
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -33,6 +35,7 @@ export default function RootLayout({
                 <main className="container py-8 md:py-12">
                     {children}
                 </main>
+                <Footer />
             </ReactQueryProvider>
         </ThemeProvider>
         </body>
