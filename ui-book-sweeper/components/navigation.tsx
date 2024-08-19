@@ -12,7 +12,7 @@ export const Navigation = () => {
                     <span className="tracking-tight">Booksweeper</span>
                 </Link>
                 <nav className="hidden items-center gap-4 md:flex">
-                    <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="/explore" className="text-sm font-medium hover:underline" prefetch={false}>
                         Explore
                     </Link>
                     <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
