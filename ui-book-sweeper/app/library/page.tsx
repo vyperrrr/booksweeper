@@ -9,6 +9,9 @@ import {
 } from "@/components/ui/pagination";
 
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
+import {ArchiveRestoreIcon, PlusIcon} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 
 export default function Page() {
@@ -41,10 +44,23 @@ export default function Page() {
                 </div>
             </div>
             <Tabs defaultValue="my-books" className="flex flex-col mt-4">
-                <TabsList className="flex justify-start border-b border-muted">
-                    <TabsTrigger value="my-books">My Books</TabsTrigger>
-                    <TabsTrigger value="borrowed">Borrowed Books</TabsTrigger>
-                    <TabsTrigger value="returned">Returned Books</TabsTrigger>
+                <TabsList className="flex justify-between border-b border-muted">
+                    <div>
+                        <TabsTrigger value="my-books">My Books</TabsTrigger>
+                        <TabsTrigger value="borrowed">Borrowed Books</TabsTrigger>
+                        <TabsTrigger value="returned">Returned Books</TabsTrigger>
+                    </div>
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <Button variant="ghost" size="sm"><ArchiveRestoreIcon className="h-5 w-5" /></Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Show archived books</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+
                 </TabsList>
             </Tabs>
             <section className="mb-8 md:mb-12">
