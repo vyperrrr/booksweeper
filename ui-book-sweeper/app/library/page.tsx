@@ -8,11 +8,14 @@ import {
     PaginationPrevious
 } from "@/components/ui/pagination";
 
-export function Page() {
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
+
+
+export default function Page() {
     return (
         <div>
             <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold">Browse Books</h2>
+                <h2 className="text-2xl font-bold">My Library</h2>
                 <div className="flex items-center gap-4">
                     <Select>
                         <SelectTrigger className="h-9 w-40 rounded-md bg-muted text-sm">
@@ -37,6 +40,13 @@ export function Page() {
                     </Select>
                 </div>
             </div>
+            <Tabs defaultValue="my-books" className="flex flex-col mt-4">
+                <TabsList className="flex justify-start border-b border-muted">
+                    <TabsTrigger value="my-books">My Books</TabsTrigger>
+                    <TabsTrigger value="borrowed">Borrowed Books</TabsTrigger>
+                    <TabsTrigger value="returned">Returned Books</TabsTrigger>
+                </TabsList>
+            </Tabs>
             <section className="mb-8 md:mb-12">
                 <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                     {Array.from({length: 20}).map((_, index) => (

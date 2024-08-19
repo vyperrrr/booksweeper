@@ -15,7 +15,7 @@ export const Navigation = () => {
                     <Link href="/explore" className="text-sm font-medium hover:underline" prefetch={false}>
                         Explore
                     </Link>
-                    <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="/library" className="text-sm font-medium hover:underline" prefetch={false}>
                         My Library
                     </Link>
                     <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
