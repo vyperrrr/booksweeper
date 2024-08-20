@@ -26,8 +26,14 @@ export const BookCard = () => {
                 </div>
                 <div
                     className="absolute space-y-2 bottom-0 left-0 right-0 px-4 py-4 hidden group-hover:block bg-secondary/80 h-full overflow-y-auto no-scrollbar max-h-full">
-                    <div>
-                        <h3 className="text-lg font-bold text-white">The Great Gatsby</h3>
+                    <div className="space-y-1">
+                        <div>
+                            <h3 className="text-lg font-bold text-white">The Great Gatsby</h3>
+                            <p className="text-xs">by F. Scott Fitzgerald</p>
+                        </div>
+                        <div className="text-muted-foreground text-xs">
+                            <span>ISBN: 92233597</span>
+                        </div>
                         <div className="flex items-center gap-2 text-sm text-white">
                             <StarIcon className="h-4 w-4 fill-primary"/>
                             <span>4.8</span>
@@ -45,8 +51,9 @@ export const BookCard = () => {
                         vehicula eu neque.
                     </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 hidden group-hover:block bg-secondary/40 backdrop-blur py-4 px-4">
-                   <Button size="lg" className="w-full text-mute font-bold">Borrow book</Button>
+                <div
+                    className="absolute bottom-0 left-0 right-0 hidden group-hover:block bg-secondary/40 backdrop-blur py-4 px-4">
+                    <Button size="lg" className="w-full text-mute font-bold">Borrow book</Button>
                 </div>
             </Link>
         </Card>
