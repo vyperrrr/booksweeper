@@ -1,12 +1,29 @@
 import {Card} from "@/components/ui/card";
-import {StarIcon} from "lucide-react";
+import {CopyIcon, PlusIcon, StarIcon} from "lucide-react";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 export const BookCard = () => {
     return (
-        <Card className="group">
-            <Link href="#" className="relative block overflow-hidden rounded-lg" prefetch={false}>
+        <Card className="relative">
+            <div className="absolute -top-3 -right-3 z-10">
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger>
+                            <Avatar>
+                                <AvatarImage src="https://github.com/shadcn.png"/>
+                                <AvatarFallback>CN</AvatarFallback>
+                            </Avatar>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                            <p className="text-xs">Username</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
+            </div>
+            <div className="relative block overflow-hidden rounded-lg group">
                 <img
                     src={"https://via.placeholder.com/600/474645"}
                     width={300}
@@ -31,8 +48,12 @@ export const BookCard = () => {
                             <h3 className="text-lg font-bold text-white">The Great Gatsby</h3>
                             <p className="text-xs">by F. Scott Fitzgerald</p>
                         </div>
-                        <div className="text-muted-foreground text-xs">
+                        <div className="text-muted-foreground text-xs flex gap-2 items-center">
                             <span>ISBN: 92233597</span>
+                            <Button className="w-3 h-3" size="icon" variant="ghost">
+                                <CopyIcon />
+                            </Button>
+
                         </div>
                         <div className="flex items-center gap-2 text-sm text-white">
                             <StarIcon className="h-4 w-4 fill-primary"/>
@@ -55,7 +76,7 @@ export const BookCard = () => {
                     className="absolute bottom-0 left-0 right-0 hidden group-hover:block bg-secondary/40 backdrop-blur py-4 px-4">
                     <Button size="lg" className="w-full text-mute font-bold">Borrow book</Button>
                 </div>
-            </Link>
+            </div>
         </Card>
     );
 };
