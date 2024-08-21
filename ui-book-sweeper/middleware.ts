@@ -11,6 +11,8 @@ export default async function middleware(req: NextRequest) {
 
     const isAuthenticated = cookies().get('access_token');
 
+    console.log(isAuthenticated)
+
     if (!isAuthenticated && !isPublicRoute) {
         const absoluteUrl = new URL("/login", req.nextUrl.origin);
         return NextResponse.redirect(absoluteUrl.toString());

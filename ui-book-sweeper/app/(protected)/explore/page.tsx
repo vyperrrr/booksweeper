@@ -1,3 +1,4 @@
+
 import {BookCard} from "@/components/book-card";
 
 import {
@@ -18,7 +19,21 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination"
 
-export default function Page() {
+
+import {bookApi} from "@/shared/api/user-client";
+import {cookies} from "next/headers";
+
+export default async function Page() {
+
+    const { data: allBooks } = await bookApi.findAllBooks({
+        page: 0,
+        size: 20,
+    }, {
+        headers: {
+            Cookie: cookies().toString(),
+        }
+    });
+
     return (
         <div>
             <div className="flex items-center justify-between">
@@ -49,8 +64,8 @@ export default function Page() {
             </div>
             <section className="mb-8 md:mb-12">
                 <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                    {Array.from({length: 20}).map((_, index) => (
-                        <BookCard key={index}/>
+                    {allBooks?.content?.map((book) => (
+                        <BookCard book={book} key={book.id}/>
                     ))}
                 </div>
             </section>

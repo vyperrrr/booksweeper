@@ -4,8 +4,9 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
+import {BookResponse} from "@/shared/api/axios-client";
 
-export const BookCard = () => {
+export const BookCard = ({ book }: { book: BookResponse }) => {
     return (
         <Card className="relative">
             <div className="absolute -top-3 -right-3 z-10">
@@ -34,7 +35,7 @@ export const BookCard = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"/>
                 <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 group-hover:hidden">
-                    <h3 className="text-lg font-bold text-white">The Great Gatsby</h3>
+                    <h3 className="text-lg font-bold text-white">{book.title}</h3>
                     <div className="flex items-center gap-2 text-sm text-white">
                         <StarIcon className="h-4 w-4 fill-primary"/>
                         <span>4.8</span>
@@ -45,11 +46,11 @@ export const BookCard = () => {
                     className="absolute space-y-2 bottom-0 left-0 right-0 px-4 py-4 hidden group-hover:block bg-secondary/80 h-full overflow-y-auto no-scrollbar max-h-full">
                     <div className="space-y-1">
                         <div>
-                            <h3 className="text-lg font-bold text-white">The Great Gatsby</h3>
-                            <p className="text-xs">by F. Scott Fitzgerald</p>
+                            <h3 className="text-lg font-bold text-white">{book.title}</h3>
+                            <p className="text-xs">{book.authorName}</p>
                         </div>
                         <div className="text-muted-foreground text-xs flex gap-2 items-center">
-                            <span>ISBN: 92233597</span>
+                            <span>ISBN: {book.isbn}</span>
                             <Button className="w-3 h-3" size="icon" variant="ghost">
                                 <CopyIcon />
                             </Button>
@@ -62,14 +63,7 @@ export const BookCard = () => {
                         </div>
                     </div>
                     <div className="text-muted-foreground text-sm text-pretty indent-8 text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, nisl sit amet pulvinar
-                        pellentesque, orci turpis auctor dui, eget consectetur erat quam at magna. Nam tempus imperdiet
-                        sagittis. Nullam semper consequat malesuada. Integer bibendum condimentum lobortis. Quisque in
-                        elementum augue. Nulla suscipit lectus at turpis luctus, volutpat rutrum quam aliquet. Maecenas
-                        aliquam ipsum ac convallis ultrices. Proin id velit ac purus convallis malesuada sed id quam.
-                        Quisque facilisis mi libero, at condimentum lacus aliquam vitae. Pellentesque tortor ipsum,
-                        congue vel maximus nec, volutpat laoreet dui. Mauris in mauris ut felis tristique suscipit
-                        vehicula eu neque.
+                        {book.synopsis}
                     </div>
                 </div>
                 <div
