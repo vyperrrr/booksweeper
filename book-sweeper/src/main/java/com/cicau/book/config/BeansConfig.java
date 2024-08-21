@@ -1,5 +1,7 @@
 package com.cicau.book.config;
 
+import com.github.javafaker.service.FakeValuesService;
+import com.github.javafaker.service.RandomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +13,8 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.Locale;
 
 @Configuration
 @RequiredArgsConstructor
@@ -39,5 +43,10 @@ public class BeansConfig {
     @Bean
     public AuditorAware<Long> auditorAware() {
         return new ApplicationAuditAware();
+    }
+
+    @Bean
+    public FakeValuesService fakeValuesService() {
+        return new FakeValuesService(new Locale("hu"), new RandomService());
     }
 }
