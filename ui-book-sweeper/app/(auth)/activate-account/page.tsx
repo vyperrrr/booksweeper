@@ -7,7 +7,6 @@ import {InputOTPForm} from "@/app/(auth)/activate-account/input-otp-form";
 
 export default function Page() {
     return (
-        <div className="flex h-screen justify-center items-center">
             <Card className="w-full max-w-md">
                 <CardHeader className="space-y-2">
                     <CardTitle className="text-3xl font-extrabold">Enter OTP</CardTitle>
@@ -23,6 +22,5 @@ export default function Page() {
                     <Button variant="secondary">Resend</Button>
                 </CardFooter>
             </Card>
-        </div>
     );
 }

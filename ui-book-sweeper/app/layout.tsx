@@ -31,11 +31,7 @@ export default function RootLayout({
             disableTransitionOnChange
         >
             <ReactQueryProvider>
-                <Navigation />
-                <main className="container py-8 md:py-12">
-                    {children}
-                </main>
-                <Footer />
+                {children}
             </ReactQueryProvider>
         </ThemeProvider>
         </body>

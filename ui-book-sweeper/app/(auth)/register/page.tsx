@@ -5,7 +5,6 @@ import {RegisterForm} from "@/app/(auth)/register/register-form";
 
 export default function Page() {
     return (
-        <div className="flex h-screen justify-center items-center">
             <Card className="w-full max-w-sm">
                 <CardHeader className="text-center space-y-2">
                     <CardTitle className="text-3xl font-extrabold">Register</CardTitle>
@@ -21,6 +20,5 @@ export default function Page() {
                     <Link href="/login" className="underline">Sign in</Link>
                 </CardFooter>
             </Card>
-        </div>
     );
 };
