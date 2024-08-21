@@ -37,7 +37,11 @@ application:
     frontend:
       activation-url: http://localhost:3000/activate-account
 server:
-    port: 8080
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        max-age: 86394000
 aws:
   access:
     key:

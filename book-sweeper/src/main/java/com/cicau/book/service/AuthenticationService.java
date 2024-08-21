@@ -37,6 +37,9 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
 
+    @Value("${server.servlet.session.cookie.max-age}")
+    private int cookieExpiration;
+
     @Value("${application.mailing.frontend.activation-url}")
     private String activationUrl;
 
@@ -73,8 +76,9 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(claims, (User) auth.getPrincipal());
 
         Cookie cookie = new Cookie("access_token", jwtToken);
+        cookie.setMaxAge(cookieExpiration);
         cookie.setHttpOnly(false);
-        cookie.setSecure(false);
+        cookie.setSecure(true);
         cookie.setPath("/");
         response.addCookie(cookie);
 
