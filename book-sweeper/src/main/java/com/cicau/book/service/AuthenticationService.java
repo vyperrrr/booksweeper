@@ -77,8 +77,8 @@ public class AuthenticationService {
 
         Cookie cookie = new Cookie("access_token", jwtToken);
         cookie.setMaxAge(cookieExpiration);
-        cookie.setHttpOnly(false);
-        cookie.setSecure(true);
+        cookie.setHttpOnly(true);
+        cookie.setSecure(false);
         cookie.setPath("/");
         response.addCookie(cookie);
 

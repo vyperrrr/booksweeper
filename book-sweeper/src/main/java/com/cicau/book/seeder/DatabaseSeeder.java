@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.management.relation.RoleNotFoundException;
 import java.time.LocalDate;
@@ -30,6 +31,8 @@ public class DatabaseSeeder implements ApplicationRunner {
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
     private final BookRepository bookRepository;
+
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -76,7 +79,7 @@ public class DatabaseSeeder implements ApplicationRunner {
                         .lastName(faker.name().lastName())
                         .dateOfBirth(LocalDate.now().minusYears(faker.random().nextInt(18, 100)))
                         .email(faker.internet().emailAddress())
-                        .password(faker.internet().password())
+                        .password(passwordEncoder.encode("password"))
                         .accountLocked(faker.random().nextBoolean())
                         .enabled(faker.random().nextBoolean())
                         .build())

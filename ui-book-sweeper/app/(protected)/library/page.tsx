@@ -12,9 +12,11 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {ArchiveRestoreIcon, PlusIcon} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
+import {MyBooks} from "@/app/(protected)/library/my-books";
+import {BorrowedBooks} from "@/app/(protected)/library/borrowed-books";
+import {ReturnedBooks} from "@/app/(protected)/library/returned-books";
 
-
-export default function Page() {
+export default async function Page() {
     return (
         <div>
             <div className="flex items-center justify-between">
@@ -47,13 +49,13 @@ export default function Page() {
                 <TabsList className="flex justify-between border-b border-muted">
                     <div>
                         <TabsTrigger value="my-books">My Books</TabsTrigger>
-                        <TabsTrigger value="borrowed">Borrowed Books</TabsTrigger>
-                        <TabsTrigger value="returned">Returned Books</TabsTrigger>
+                        <TabsTrigger value="borrowed-books">Borrowed Books</TabsTrigger>
+                        <TabsTrigger value="returned-books">Returned Books</TabsTrigger>
                     </div>
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
-                                <Button variant="ghost" size="sm"><ArchiveRestoreIcon className="h-5 w-5" /></Button>
+                                <Button variant="ghost" size="sm"><ArchiveRestoreIcon className="h-5 w-5"/></Button>
                             </TooltipTrigger>
                             <TooltipContent>
                                 <p>Show archived books</p>
@@ -62,14 +64,12 @@ export default function Page() {
                     </TooltipProvider>
 
                 </TabsList>
+
+                <TabsContent value="my-books"><MyBooks/></TabsContent>
+                <TabsContent value="borrowed-books"><BorrowedBooks/></TabsContent>
+                <TabsContent value="returned-books"><ReturnedBooks/></TabsContent>
+
             </Tabs>
-            <section className="mb-8 md:mb-12">
-                <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                    {Array.from({length: 20}).map((_, index) => (
-                        <BookCard key={index}/>
-                    ))}
-                </div>
-            </section>
             <Pagination>
                 <PaginationContent>
                     <PaginationItem>
