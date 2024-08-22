@@ -9,35 +9,40 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 
-import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination"
 
 
 import {bookApi} from "@/shared/api/user-client";
 import {cookies} from "next/headers";
+import {PaginationControls} from "@/components/pagination-controls";
 
-export default async function Page() {
+const DEFAULT_PAGE = 1;
+const DEFAULT_PER_PAGE = 10;
+
+export default async function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+
+    const page = searchParams.page ?? DEFAULT_PAGE.toString();
+    const per_page = searchParams.per_page ?? DEFAULT_PER_PAGE.toString();
 
     const { data: allBooks } = await bookApi.findAllBooks({
-        page: 0,
-        size: 20,
+        page: parseInt(page as string)-1,
+        size: parseInt(per_page as string),
     }, {
         headers: {
             Cookie: cookies().toString(),
         }
     });
 
+    const lowerBound = (allBooks?.page ?? 0) * (allBooks?.size ?? 0) + 1;
+    const upperBound = (allBooks?.page ?? 0) * (allBooks?.size ?? 0) + (allBooks?.last ? (allBooks?.totalElements ?? 0) - (allBooks?.page ?? 0) * (allBooks?.size ?? 0) : (allBooks?.size ?? 0));
+
     return (
         <div>
             <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold">Browse Books</h2>
+                <div>
+                    <h2 className="text-2xl font-bold">Browse Books</h2>
+                    <p className="text-sm text-muted-foreground">({`${lowerBound}-${upperBound}`}) out of {allBooks.totalElements}</p>
+                </div>
+
                 <div className="flex items-center gap-4">
                     <Select>
                         <SelectTrigger className="h-9 w-40 rounded-md bg-muted text-sm">
@@ -69,30 +74,12 @@ export default async function Page() {
                     ))}
                 </div>
             </section>
-            <Pagination>
-                <PaginationContent>
-                    <PaginationItem>
-                        <PaginationPrevious href="#" />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#" isActive>
-                            2
-                        </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">3</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationEllipsis />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationNext href="#" />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
+            <PaginationControls
+                defaultPage={DEFAULT_PAGE}
+                defaultPerPage={DEFAULT_PER_PAGE}
+                isFirst={allBooks.first}
+                isLast={allBooks.last}
+                totalPages={allBooks.totalPages} />
         </div>
 
     );
