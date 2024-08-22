@@ -1,12 +1,17 @@
 import {Card} from "@/components/ui/card";
 import {CopyIcon, PlusIcon, StarIcon} from "lucide-react";
-import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {BookResponse} from "@/shared/api/axios-client";
+import React from "react";
 
-export const BookCard = ({ book }: { book: BookResponse }) => {
+interface BookCardProps {
+    book: BookResponse;
+    onBorrow?: (bookId: number) => void;
+}
+
+export const BookCard: React.FC<BookCardProps> = ({ book, onBorrow }) => {
     return (
         <Card className="relative">
             <div className="absolute -top-3 -right-3 z-10">
@@ -68,7 +73,7 @@ export const BookCard = ({ book }: { book: BookResponse }) => {
                 </div>
                 <div
                     className="absolute bottom-0 left-0 right-0 hidden group-hover:block bg-secondary/40 backdrop-blur py-4 px-4">
-                    <Button size="lg" className="w-full text-mute font-bold">Borrow book</Button>
+                    <Button onClick={() => onBorrow && onBorrow(book.id!)} size="lg" className="w-full text-mute font-bold">Borrow book</Button>
                 </div>
             </div>
         </Card>

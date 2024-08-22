@@ -9,14 +9,13 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 
-
-
 import {bookApi} from "@/shared/api/user-client";
 import {cookies} from "next/headers";
 import {PaginationControls} from "@/components/pagination-controls";
+import {BookList} from "@/app/(protected)/explore/book-list";
 
 const DEFAULT_PAGE = 1;
-const DEFAULT_PER_PAGE = 10;
+const DEFAULT_PER_PAGE = 2;
 
 export default async function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
 
@@ -67,13 +66,7 @@ export default async function Page({ searchParams }: { searchParams: { [key: str
                     </Select>
                 </div>
             </div>
-            <section className="mb-8 md:mb-12">
-                <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                    {allBooks?.content?.map((book) => (
-                        <BookCard book={book} key={book.id}/>
-                    ))}
-                </div>
-            </section>
+            <BookList books={allBooks.content} />
             <PaginationControls
                 defaultPage={DEFAULT_PAGE}
                 defaultPerPage={DEFAULT_PER_PAGE}

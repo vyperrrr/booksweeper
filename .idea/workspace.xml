@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/components/pagination-controls.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/explore/book-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/borrowed-book-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/my-book-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/returned-book-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/hooks/use-borrow-book.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/explore/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/explore/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/components/ui/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/components/ui/pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/borrowed-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/borrowed-books.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/my-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/my-books.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/returned-books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/app/(protected)/library/returned-books.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/components/book-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/components/book-card.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +196,9 @@
       <workItem from="1724259972974" duration="4359000" />
       <workItem from="1724268974520" duration="8830000" />
       <workItem from="1724282837124" duration="2656000" />
-      <workItem from="1724333853839" duration="6993000" />
+      <workItem from="1724333853839" duration="7580000" />
+      <workItem from="1724349048188" duration="10000" />
+      <workItem from="1724363118276" duration="2765000" />
     </task>
     <servers />
   </component>
