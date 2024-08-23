@@ -17,7 +17,6 @@ import {Input} from "@/components/ui/input"
 
 import {FcGoogle} from "react-icons/fc";
 import {useAuthenticate} from "@/hooks/use-authenticate";
-import useAuthStore from "@/store/use-auth-store";
 import {useRouter} from "next/navigation";
 
 const formSchema = z.object({

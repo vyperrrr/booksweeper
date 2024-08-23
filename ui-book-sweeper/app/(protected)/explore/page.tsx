@@ -74,6 +74,5 @@ export default async function Page({ searchParams }: { searchParams: { [key: str
                 isLast={allBooks.last}
                 totalPages={allBooks.totalPages} />
         </div>
-
     );
 };
