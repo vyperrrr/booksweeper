@@ -16,8 +16,6 @@ import {MyBooks} from "@/app/(protected)/library/my-books";
 import {BorrowedBooks} from "@/app/(protected)/library/borrowed-books";
 import {ReturnedBooks} from "@/app/(protected)/library/returned-books";
 import {AddBookForm} from "@/app/(protected)/library/add-book-form";
-import {InputFile} from "@/components/file-input";
-import {FileUpload} from "@/components/file-upload";
 
 export default async function Page() {
     return (
@@ -26,15 +24,8 @@ export default async function Page() {
                 <h2 className="text-2xl font-bold">Upload</h2>
                 <span className="text-sm text-muted-foreground">Add a book to your collection</span>
             </div>
-            <div className="grid grid-cols-12 gap-12">
-                <div className="col-span-3">
-                    <FileUpload/>
-                </div>
-                <div className="col-span-9">
-                    <AddBookForm/>
-                </div>
+            <AddBookForm/>
 
-            </div>
             <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold">Collection</h2>
                 <div className="flex items-center gap-4">

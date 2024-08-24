@@ -25,16 +25,18 @@ public class S3Service {
     @Value("${aws.s3.bucket.name}")
     private String bucketName;
 
-    public void putObject(@NonNull MultipartFile file) {
+    public String putObject(@NonNull MultipartFile file) {
         PutObjectRequest objectRequest = PutObjectRequest.builder()
                 .bucket(bucketName)
-                .key(file.getName())
+                .key(file.getOriginalFilename())
                 .build();
         try {
             s3.putObject(objectRequest, RequestBody.fromBytes(file.getBytes()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        return s3Utilities.getUrl(builder -> builder.bucket(bucketName).key(file.getOriginalFilename())).toExternalForm();
     }
 
     public byte[] getObject(String key) {
@@ -51,9 +53,5 @@ public class S3Service {
             throw new RuntimeException(e);
         }
 
-    }
-
-    public String getUrl(String key) {
-        return String.valueOf(s3Utilities.getUrl(builder -> builder.bucket(bucketName).key(key)));
     }
 }

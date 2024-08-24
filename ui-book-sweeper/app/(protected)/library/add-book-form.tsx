@@ -15,10 +15,11 @@ import {
 } from "@/components/ui/form"
 import {Input} from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
-import { Checkbox } from "@/components/ui/checkbox"
+import {Checkbox} from "@/components/ui/checkbox"
 import {UploadIcon} from "lucide-react";
 import {useSaveBook} from "@/hooks/use-save-book";
-
+import {useRef} from "react";
+import {useUploadBookCover} from "@/hooks/use-upload-book-cover";
 
 
 const addBookSchema = z.object({
@@ -26,11 +27,13 @@ const addBookSchema = z.object({
     authorName: z.string(),
     isbn: z.string(),
     synopsis: z.string(),
-    shareable: z.boolean()
+    shareable: z.boolean(),
+    file: z.instanceof(FileList).optional(),
 })
 
 export const AddBookForm = () => {
-    const { mutate } = useSaveBook();
+    const { mutate: saveBook} = useSaveBook();
+    const { mutate: uploadBookCover } = useUploadBookCover();
 
     const form = useForm<z.infer<typeof addBookSchema>>({
         resolver: zodResolver(addBookSchema),
@@ -39,12 +42,30 @@ export const AddBookForm = () => {
         }
     })
 
+    const fileRef = form.register("file");
+
     function onSubmit(values: z.infer<typeof addBookSchema>) {
-        mutate({
-            bookRequest: values
+        const {file, ...rest} = values;
+        saveBook({
+            bookRequest: rest,
         }, {
-            onSuccess: () => {
-                alert("Book uploaded successfully")
+            onSuccess: (response) => {
+                const newlyCreatedBookId = response.data;
+
+                if (!file) {
+                    return;
+                }
+
+                //TODO: fix file upload
+
+                uploadBookCover({
+                    bookId: newlyCreatedBookId,
+                    file: file[0]
+                }, {
+                    onSuccess: () => {
+                        alert("Book uploaded successfully");
+                    }
+                })
             }
         })
     }
@@ -114,7 +135,7 @@ export const AddBookForm = () => {
                     <FormField
                         control={form.control}
                         name="shareable"
-                        render={({ field }) => (
+                        render={({field}) => (
                             <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                                 <FormControl>
                                     <Checkbox
@@ -133,7 +154,25 @@ export const AddBookForm = () => {
                             </FormItem>
                         )}
                     />
-                    <Button className="flex gap-2" size="lg" type="submit">Upload<UploadIcon size={18} /></Button>
+                    <FormField
+                        control={form.control}
+                        name="file"
+                        render={({field}) => {
+                            return (
+                                <FormItem>
+                                    <FormLabel>File</FormLabel>
+                                    <FormControl>
+                                        <div className="grid w-full max-w-sm items-center gap-1.5">
+                                            <Input {...fileRef} id="picture" type="file"/>
+                                        </div>
+                                    </FormControl>
+                                    <FormMessage/>
+                                </FormItem>
+                            );
+                        }}
+                    />
+
+                    <Button className="flex gap-2" size="lg" type="submit">Upload<UploadIcon size={18}/></Button>
                 </form>
             </Form>
         </div>

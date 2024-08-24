@@ -45,14 +45,14 @@ server:
 aws:
   access:
     key:
-      id: AKIAVRUVSR5ESOZKOPME
+      id: AKIAVRUVSR5EZ26MJETX
   secret:
     access:
-      key: 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
+      key: RyUKlJFdpeLbhsiCq/aK8m3UCWG/zxeVFoOgycmt
   s3:
     region: eu-north-1
     bucket:
-      name: booksweeperbucket
+      name: direct-upload-booksweeper-bucket
   java:
     v1:
       disableDeprecationAnnouncement: true

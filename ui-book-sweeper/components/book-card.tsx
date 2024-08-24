@@ -12,6 +12,9 @@ interface BookCardProps {
 }
 
 export const BookCard: React.FC<BookCardProps> = ({ book, onBorrow }) => {
+
+    console.log(book.bookCoverUrl);
+
     return (
         <Card className="relative">
             <div className="absolute -top-3 -right-3 z-10">
@@ -31,7 +34,7 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onBorrow }) => {
             </div>
             <div className="relative block overflow-hidden rounded-lg group">
                 <img
-                    src={"https://via.placeholder.com/600/474645"}
+                    src={book.bookCoverUrl}
                     width={300}
                     height={400}
                     alt="Book Cover"

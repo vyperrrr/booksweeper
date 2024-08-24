@@ -230,9 +230,7 @@ public class BookService {
         if(!book.getOwner().getId().equals(user.getId()))
             throw new OperationNotPermittedException("You cannot upload a book cover for a book that you do not own");
 
-        s3Service.putObject(file);
-
-        String bookCoverUrl = s3Service.getUrl(file.getName());
+        String bookCoverUrl = s3Service.putObject(file);
 
         book.setBookCoverUrl(bookCoverUrl);
 
