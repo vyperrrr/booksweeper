@@ -1,0 +1,31 @@
+<div class="flex justify-content-center" *ngIf="submitted else codeForm">
+  <div>
+    <div *ngIf="isCorrect else badCode">
+      <p-card header="Activation was successful" subheader="{{ message }}">
+        <p-button (click)="redirectToLogin()" label="Go to login"></p-button>
+      </p-card>
+    </div>
+    <ng-template #badCode>
+      <p-card header="Activation failed" subheader="{{ message }}">
+        <p-button (click)="submitted = false" label="Try again"></p-button>
+      </p-card>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #codeForm>
+  <div class="flex justify-content-center">
+    <p-card header="One Time Password" subheader="We've sent you en email with your activation code">
+      <div class="flex flex-column gap-2">
+        <ng-otp-input [config]="{
+          length: 6,
+          allowNumbersOnly: true
+        }" (onInputChange)="code = $event"></ng-otp-input>
+        <p-button (click)="validateCode()" label="Confirm"></p-button>
+      </div>
+    </p-card>
+  </div>
+</ng-template>
+
+
+

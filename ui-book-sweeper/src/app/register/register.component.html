@@ -1,0 +1,46 @@
+<div class="flex justify-content-center">
+  <p-card header="Register" subheader="Create a new account" [style]="{ width: '360px' }">
+    <div class="flex flex-column gap-2">
+      <div class="text-red-500 text-xs bg-red-900 px-4 py-2 border-round-lg" *ngIf="errors.length">
+        <p *ngFor="let error of errors">{{error}}</p>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="firstName">First name</label>
+        <input
+          pInputText
+          id="firstName"
+          placeholder="John"
+          [(ngModel)]="registrationRequest.firstName" />
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="lastName">Last name</label>
+        <input
+          pInputText
+          id="lastName"
+          placeholder="Doe"
+          [(ngModel)]="registrationRequest.lastName" />
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="email">Email</label>
+        <input
+          pInputText
+          id="email"
+          placeholder="example@email.com"
+          [(ngModel)]="registrationRequest.email" />
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="password">Password</label>
+        <input
+          pInputText
+          id="password"
+          placeholder="password"
+          [(ngModel)]="registrationRequest.password" />
+      </div>
+      <p-button label="Register" (click)="register()" ></p-button>
+      <div class="flex gap-2 justify-content-between align-items-center">
+        <p>Already have an account?</p>
+        <a class="underline cursor-pointer" (click)="authenticate()">Login</a>
+      </div>
+    </div>
+  </p-card>
+</div>
