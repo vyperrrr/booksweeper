@@ -1,6 +1,6 @@
 package com.cicau.book.config;
 
-import com.cicau.book.entity.User;
+import com.cicau.book.user.User;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

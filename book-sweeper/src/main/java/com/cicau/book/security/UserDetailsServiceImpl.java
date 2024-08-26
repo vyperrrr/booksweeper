@@ -1,6 +1,6 @@
 package com.cicau.book.security;
 
-import com.cicau.book.repository.UserRepository;
+import com.cicau.book.user.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

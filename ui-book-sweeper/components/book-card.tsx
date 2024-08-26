@@ -1,5 +1,5 @@
 import {Card} from "@/components/ui/card";
-import {CopyIcon, PlusIcon, StarIcon} from "lucide-react";
+import {ArchiveIcon, CopyIcon, GlobeIcon, PlusIcon, StarIcon} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
@@ -7,13 +7,16 @@ import {BookResponse} from "@/shared/api/axios-client";
 import React from "react";
 
 interface BookCardProps {
+    forBorrow?: boolean;
     book: BookResponse;
     onBorrow?: (bookId: number) => void;
 }
 
-export const BookCard: React.FC<BookCardProps> = ({ book, onBorrow }) => {
-
-    console.log(book.bookCoverUrl);
+export const BookCard: React.FC<BookCardProps> = ({
+                                                      forBorrow = false,
+                                                      book,
+                                                      onBorrow
+                                                  }) => {
 
     return (
         <Card className="relative">
@@ -60,7 +63,7 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onBorrow }) => {
                         <div className="text-muted-foreground text-xs flex gap-2 items-center">
                             <span>ISBN: {book.isbn}</span>
                             <Button className="w-3 h-3" size="icon" variant="ghost">
-                                <CopyIcon />
+                                <CopyIcon/>
                             </Button>
 
                         </div>
@@ -74,10 +77,13 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onBorrow }) => {
                         {book.synopsis}
                     </div>
                 </div>
-                <div
-                    className="absolute bottom-0 left-0 right-0 hidden group-hover:block bg-secondary/40 backdrop-blur py-4 px-4">
-                    <Button onClick={() => onBorrow && onBorrow(book.id!)} size="lg" className="w-full text-mute font-bold">Borrow book</Button>
-                </div>
+                {forBorrow &&
+                    <div
+                        className="absolute bottom-0 left-0 right-0 hidden group-hover:block bg-secondary/40 backdrop-blur py-4 px-4">
+                        <Button onClick={() => onBorrow && onBorrow(book.id!)} size="lg"
+                                className="w-full text-mute font-bold">Borrow book</Button>
+                    </div>
+                }
             </div>
         </Card>
     );

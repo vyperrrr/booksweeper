@@ -16,6 +16,7 @@ import {MyBooks} from "@/app/(protected)/library/my-books";
 import {BorrowedBooks} from "@/app/(protected)/library/borrowed-books";
 import {ReturnedBooks} from "@/app/(protected)/library/returned-books";
 import {AddBookForm} from "@/app/(protected)/library/add-book-form";
+import {BookControls} from "@/app/(protected)/library/book-controls";
 
 export default async function Page() {
     return (
@@ -25,7 +26,6 @@ export default async function Page() {
                 <span className="text-sm text-muted-foreground">Add a book to your collection</span>
             </div>
             <AddBookForm/>
-
             <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold">Collection</h2>
                 <div className="flex items-center gap-4">
@@ -101,6 +101,13 @@ export default async function Page() {
                     </PaginationItem>
                 </PaginationContent>
             </Pagination>
+            <div className="flex items-center justify-between">
+                <h2 className="text-2xl font-bold">Manage books</h2>
+                <span className="text-sm text-muted-foreground">
+                    Manage your books by editing, deleting or archiving them
+                </span>
+            </div>
+            <BookControls />
         </div>
     );
 };

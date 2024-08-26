@@ -1,6 +1,6 @@
 package com.cicau.book.specification;
 
-import com.cicau.book.entity.Book;
+import com.cicau.book.book.Book;
 import org.springframework.data.jpa.domain.Specification;
 
 public class BookSpecification {

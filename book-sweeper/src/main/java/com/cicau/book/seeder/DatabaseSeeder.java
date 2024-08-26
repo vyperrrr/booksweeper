@@ -1,21 +1,18 @@
 package com.cicau.book.seeder;
 
-import com.cicau.book.entity.Book;
-import com.cicau.book.entity.Role;
-import com.cicau.book.entity.User;
-import com.cicau.book.repository.BookRepository;
-import com.cicau.book.repository.RoleRepository;
-import com.cicau.book.repository.UserRepository;
+import com.cicau.book.book.Book;
+import com.cicau.book.role.Role;
+import com.cicau.book.user.User;
+import com.cicau.book.book.BookRepository;
+import com.cicau.book.role.RoleRepository;
+import com.cicau.book.user.UserRepository;
 import com.github.javafaker.Faker;
-import com.github.javafaker.service.FakeValuesInterface;
-import com.github.javafaker.service.FakeValuesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.management.relation.RoleNotFoundException;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;

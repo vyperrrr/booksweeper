@@ -27,7 +27,7 @@ export const BookList: React.FC<BookListProps> = ({ books }) => {
         <section className="mb-8 md:mb-12">
             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 {books?.map((book) => (
-                    <BookCard key={book.id} book={book} onBorrow={handleBorrow}/>
+                    <BookCard key={book.id} book={book} forBorrow onBorrow={handleBorrow}/>
                 ))}
             </div>
         </section>

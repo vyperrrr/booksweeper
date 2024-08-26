@@ -1,7 +1,5 @@
 package com.cicau.book.handler;
 
-import com.cicau.book.dtos.ExceptionResponse;
-import com.cicau.book.enums.BusinessErrorCode;
 import com.cicau.book.exception.OperationNotPermittedException;
 import jakarta.mail.MessagingException;
 import org.springframework.http.HttpStatus;

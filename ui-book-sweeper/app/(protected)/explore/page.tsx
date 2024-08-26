@@ -15,7 +15,7 @@ import {PaginationControls} from "@/components/pagination-controls";
 import {BookList} from "@/app/(protected)/explore/book-list";
 
 const DEFAULT_PAGE = 1;
-const DEFAULT_PER_PAGE = 2;
+const DEFAULT_PER_PAGE = 10;
 
 export default async function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
 
