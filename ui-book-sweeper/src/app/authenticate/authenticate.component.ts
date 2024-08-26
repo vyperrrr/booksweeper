@@ -31,7 +31,7 @@ export class AuthenticateComponent {
         next: (response) => {
           // Save token
           this.tokenService.token = response.token as string;
-          this.router.navigate(['explore']);
+          this.router.navigate(['books']);
         },
         error: (error) => {
           if(error.error.validationErrors)
