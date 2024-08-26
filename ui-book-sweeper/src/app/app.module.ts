@@ -6,20 +6,19 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthenticateComponent} from './authenticate/authenticate.component';
 import {FormsModule} from "@angular/forms";
 import { RegisterComponent } from './register/register.component';
-import { ExploreComponent } from './explore/explore.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 import {NgOtpInputModule} from "ng-otp-input";
+import {HttpTokenInterceptor} from "./api/interceptor/http-token.interceptor";
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticateComponent,
     RegisterComponent,
-    ExploreComponent,
     ActivateAccountComponent
   ],
   imports: [
@@ -33,7 +32,12 @@ import {NgOtpInputModule} from "ng-otp-input";
     NgOtpInputModule
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpTokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

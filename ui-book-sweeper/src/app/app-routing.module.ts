@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AuthenticateComponent} from "./authenticate/authenticate.component";
 import {RegisterComponent} from "./register/register.component";
-import {ExploreComponent} from "./explore/explore.component";
 import {ActivateAccountComponent} from "./activate-account/activate-account.component";
 
 const routes: Routes = [
@@ -15,12 +14,12 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'explore',
-    component: ExploreComponent,
-  },
-  {
     path: 'activate-account',
     component: ActivateAccountComponent,
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule)
   }
 ];
 

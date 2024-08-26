@@ -1,14 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { BookRoutingModule } from './book-routing.module';
+import { MainComponent } from './pages/main/main.component';
+import {MenubarModule} from "primeng/menubar";
+import { MenuComponent } from './components/menu/menu.component';
+import {ButtonModule} from "primeng/button";
+import {InputTextModule} from "primeng/inputtext";
+import { BookListComponent } from './pages/book-list/book-list.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MainComponent,
+    MenuComponent,
+    BookListComponent,
+  ],
   imports: [
     CommonModule,
-    BookRoutingModule
+    BookRoutingModule,
+    MenubarModule,
+    ButtonModule,
+    InputTextModule,
+    NgOptimizedImage
   ]
 })
 export class BookModule { }
