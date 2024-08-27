@@ -1,0 +1,27 @@
+<p-card header="{{ book.title }}" subheader="{{ book.authorName }}">
+  <ng-template pTemplate="header">
+    <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+  </ng-template>
+  <p>
+    {{ book.synopsis}}
+  </p>
+  <ng-template pTemplate="footer">
+    <div class="flex gap-2 justify-content-between align-items-center">
+      <div class="flex gap-2 align-items-center">
+        <app-rating [rating]="book.rate ?? 0"></app-rating>
+        <span class="text-sm" *ngIf="book.rate && book.rate > 0">{{ book.rate }}</span>
+      </div>
+      <div class="flex gap-2" *ngIf="showManagement">
+        <p-button (click)="onEdit()" icon="pi pi-file-edit"></p-button>
+        <p-button (click)="onShare()" icon="pi pi-share-alt"></p-button>
+        <p-button (click)="onArchive()" icon="pi pi-lock"></p-button>
+      </div>
+      <div class="flex gap-2" *ngIf="!showManagement">
+        <p-button (click)="onShowDetails()" icon="pi pi-info-circle"></p-button>
+        <p-button (click)="onBorrow()" icon="pi pi-check-circle"></p-button>
+        <p-button (click)="onBookmark()" icon="pi pi-bookmark"></p-button>
+      </div>
+    </div>
+
+  </ng-template>
+</p-card>

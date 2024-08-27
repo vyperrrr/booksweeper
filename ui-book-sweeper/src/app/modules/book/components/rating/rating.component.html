@@ -1,0 +1,11 @@
+<div class="flex gap-1">
+  <ng-container *ngFor="let _ of [].constructor(fullStars); let i = index">
+    <i class="pi pi-star-fill"></i>
+  </ng-container>
+  <ng-container *ngIf="hasHalfStar">
+    <i class="pi pi-star-half-fill"></i>
+  </ng-container>
+  <ng-container *ngFor="let _ of [].constructor(emptyStars); let i = index">
+    <i class="pi pi-star"></i>
+  </ng-container>
+</div>

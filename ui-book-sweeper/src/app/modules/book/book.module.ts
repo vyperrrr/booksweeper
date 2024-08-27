@@ -8,6 +8,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import { BookListComponent } from './pages/book-list/book-list.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
+import {CardModule} from "primeng/card";
+import {StyleClassModule} from "primeng/styleclass";
+import { RatingComponent } from './components/rating/rating.component';
 
 
 @NgModule({
@@ -15,14 +19,18 @@ import { BookListComponent } from './pages/book-list/book-list.component';
     MainComponent,
     MenuComponent,
     BookListComponent,
+    BookCardComponent,
+    RatingComponent,
   ],
-  imports: [
-    CommonModule,
-    BookRoutingModule,
-    MenubarModule,
-    ButtonModule,
-    InputTextModule,
-    NgOptimizedImage
-  ]
+    imports: [
+        CommonModule,
+        BookRoutingModule,
+        MenubarModule,
+        ButtonModule,
+        InputTextModule,
+        NgOptimizedImage,
+        CardModule,
+        StyleClassModule
+    ]
 })
 export class BookModule { }
