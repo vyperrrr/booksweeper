@@ -1,0 +1,47 @@
+<div class="card">
+  <p-toast></p-toast>
+</div>
+<div class="flex flex-column gap-2">
+  <h1 class="text-2xl font-bold">Upload book</h1>
+  <div>
+    <div class="flex flex-column gap-2">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="title">Title</label>
+        <input pInputText id="title" aria-describedby="title-help" [(ngModel)]="bookRequest.title"/>
+        <small id="title-help">The title of the book you wish to upload.</small>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label htmlFor="author">Author</label>
+        <input pInputText id="author" aria-describedby="author-help" [(ngModel)]="bookRequest.authorName"/>
+        <small id="author-help">The name of the book's author.</small>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label htmlFor="isbn">ISBN</label>
+        <input pInputText id="isbn" aria-describedby="isbn-help" [(ngModel)]="bookRequest.isbn"/>
+        <small id="isbn-help">International Standard Book Number</small>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label htmlFor="synopsis">Synopsis</label>
+        <textarea rows="5" cols="30" pInputTextarea aria-describedby="synopsis-help" [(ngModel)]="bookRequest.synopsis"></textarea>
+        <small id="synopsis-help">A teaser for the book.</small>
+      </div>
+      <div class="flex flex-column gap-2">
+        <p-checkbox [(ngModel)]="bookRequest.shareable" [binary]="true" inputId="binary" label="Public" aria-describedby="shareable-help"></p-checkbox>
+        <small id="shareable-help">If you leave it on public, other users will see your book and be able to borrow
+          it.</small>
+      </div>
+      <div>
+        <p-fileUpload [customUpload]="true" (uploadHandler)="handleFileUpload($event)" [fileLimit]="1"
+                      accept="image/*">
+          <ng-template pTemplate="content">
+          </ng-template>
+        </p-fileUpload>
+      </div>
+    </div>
+  </div>
+  <div class="flex gap-2 justify-content-end">
+    <p-button icon="pi pi-cloud-upload" label="Upload" (click)="uploadBook()"></p-button>
+    <p-button icon="pi pi-times-circle" label="Cancel" (click)="cancelUploadBook()"></p-button>
+  </div>
+</div>
+

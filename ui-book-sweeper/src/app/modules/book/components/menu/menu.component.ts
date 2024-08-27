@@ -19,6 +19,7 @@ export class MenuComponent implements OnInit {
       items: [
         {
           label: 'My Books',
+          routerLink: 'my-books',
         },
         {
           label: 'Borrowed Books',

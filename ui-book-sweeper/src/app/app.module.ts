@@ -13,6 +13,8 @@ import { RegisterComponent } from './register/register.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 import {NgOtpInputModule} from "ng-otp-input";
 import {HttpTokenInterceptor} from "./api/interceptor/http-token.interceptor";
+import {MessagesModule} from "primeng/messages";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import {HttpTokenInterceptor} from "./api/interceptor/http-token.interceptor";
     ButtonModule,
     InputTextModule,
     FormsModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    MessagesModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [
     HttpClient,

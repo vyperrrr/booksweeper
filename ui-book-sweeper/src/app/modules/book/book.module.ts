@@ -12,6 +12,14 @@ import { BookCardComponent } from './components/book-card/book-card.component';
 import {CardModule} from "primeng/card";
 import {StyleClassModule} from "primeng/styleclass";
 import { RatingComponent } from './components/rating/rating.component';
+import {PaginatorModule} from "primeng/paginator";
+import {ToastModule} from "primeng/toast";
+import {RippleModule} from "primeng/ripple";
+import { MyBooksComponent } from './pages/my-books/my-books.component';
+import { UploadBookComponent } from './pages/upload-book/upload-book.component';
+import {CheckboxModule} from "primeng/checkbox";
+import {FileUploadModule} from "primeng/fileupload";
+import {InputTextareaModule} from "primeng/inputtextarea";
 
 
 @NgModule({
@@ -21,16 +29,24 @@ import { RatingComponent } from './components/rating/rating.component';
     BookListComponent,
     BookCardComponent,
     RatingComponent,
+    MyBooksComponent,
+    UploadBookComponent,
   ],
-    imports: [
-        CommonModule,
-        BookRoutingModule,
-        MenubarModule,
-        ButtonModule,
-        InputTextModule,
-        NgOptimizedImage,
-        CardModule,
-        StyleClassModule
-    ]
+  imports: [
+    CommonModule,
+    BookRoutingModule,
+    MenubarModule,
+    ButtonModule,
+    InputTextModule,
+    NgOptimizedImage,
+    CardModule,
+    StyleClassModule,
+    PaginatorModule,
+    ToastModule,
+    RippleModule,
+    CheckboxModule,
+    FileUploadModule,
+    InputTextareaModule
+  ]
 })
 export class BookModule { }
