@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FileUploadHandlerEvent} from "primeng/fileupload";
 import {BookRequest} from "../../../../api/models/book-request";
 import {BookService} from "../../../../api/services/book.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MessageService} from "primeng/api";
 
 @Component({
@@ -11,7 +11,7 @@ import {MessageService} from "primeng/api";
   styleUrls: ['./upload-book.component.scss'],
   providers: [MessageService]
 })
-export class UploadBookComponent {
+export class UploadBookComponent implements OnInit {
 
   bookRequest: BookRequest = {
     title: '',
@@ -27,7 +27,30 @@ export class UploadBookComponent {
     private bookService: BookService,
     private router: Router,
     private messageService: MessageService,
+    private activatedRoute: ActivatedRoute,
   ) {
+  }
+
+  ngOnInit(): void {
+    const bookId = this.activatedRoute.snapshot.params['bookId'];
+    if(bookId){
+      this.bookService.findBookById({
+        bookId,
+      })
+        .subscribe(
+          {
+            next: (book) => {
+              this.bookRequest = {
+                title: book.title as string,
+                authorName: book.authorName as string,
+                isbn: book.isbn as string,
+                synopsis: book.synopsis as string,
+                shareable: book.shareable,
+              }
+            }
+          }
+        )
+    }
   }
 
   handleFileUpload($event: FileUploadHandlerEvent) {
@@ -44,7 +67,7 @@ export class UploadBookComponent {
         {
           next: (bookId) => {
 
-            if(!this.bookCover) {
+            if (!this.bookCover) {
               this.messageService.add({severity: 'success', summary: 'Success', detail: 'Book uploaded successfully'});
               return;
             }
@@ -60,10 +83,18 @@ export class UploadBookComponent {
               .subscribe(
                 {
                   next: () => {
-                    this.messageService.add({severity: 'success', summary: 'Success', detail: 'Book uploaded successfully'});
+                    this.messageService.add({
+                      severity: 'success',
+                      summary: 'Success',
+                      detail: 'Book uploaded successfully'
+                    });
                   },
                   error: (error) => {
-                    this.messageService.add({severity: 'error', summary: 'Error', detail: error.error.validationErrors});
+                    this.messageService.add({
+                      severity: 'error',
+                      summary: 'Error',
+                      detail: error.error.validationErrors
+                    });
                   }
                 }
               )

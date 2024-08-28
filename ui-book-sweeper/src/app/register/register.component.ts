@@ -43,6 +43,6 @@ export class RegisterComponent {
   }
 
   authenticate() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/authenticate']);
   }
 }

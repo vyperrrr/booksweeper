@@ -4,6 +4,7 @@ import {MainComponent} from "./pages/main/main.component";
 import {BookListComponent} from "./pages/book-list/book-list.component";
 import {MyBooksComponent} from "./pages/my-books/my-books.component";
 import {UploadBookComponent} from "./pages/upload-book/upload-book.component";
+import {BorrowedBooksComponent} from "./pages/borrowed-books/borrowed-books.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,14 @@ const routes: Routes = [
       {
         path: 'my-books/upload-book',
         component: UploadBookComponent
+      },
+      {
+        path: 'my-books/upload-book/:bookId',
+        component: UploadBookComponent
+      },
+      {
+        path: 'borrowed-books',
+        component: BorrowedBooksComponent
       }
     ]
   }

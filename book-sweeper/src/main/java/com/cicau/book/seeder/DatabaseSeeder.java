@@ -23,34 +23,14 @@ import java.util.stream.IntStream;
 @RequiredArgsConstructor
 public class DatabaseSeeder implements ApplicationRunner {
 
-    private final Faker faker = new Faker();
-
     private final RoleRepository roleRepository;
-    private final UserRepository userRepository;
-    private final BookRepository bookRepository;
-
-    private final PasswordEncoder passwordEncoder;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
             List<Role> roles = generateRoles();
-            List<User> users = generateUsers();
-            List<Book> books = generateBooks();
 
             roleRepository.saveAll(roles);
-            userRepository.saveAll(users);
-            bookRepository.saveAll(books);
-
-            users.forEach(user -> {
-                user.setRoles(Collections.singletonList(roles.get(faker.random().nextInt(0, roles.size()-1))));
-                userRepository.save(user);
-            });
-
-            books.forEach(book -> {
-                book.setOwner(users.get(faker.random().nextInt(0, users.size()-1)));
-                bookRepository.save(book);
-            });
 
     }
 
@@ -67,36 +47,4 @@ public class DatabaseSeeder implements ApplicationRunner {
         return List.of(USER, ADMIN);
 
     }
-
-    public List<User> generateUsers() {
-
-        return IntStream.range(0, faker.random().nextInt(3, 10))
-                .mapToObj(i -> User.builder()
-                        .firstName(faker.name().firstName())
-                        .lastName(faker.name().lastName())
-                        .dateOfBirth(LocalDate.now().minusYears(faker.random().nextInt(18, 100)))
-                        .email(faker.internet().emailAddress())
-                        .password(passwordEncoder.encode("password"))
-                        .accountLocked(faker.random().nextBoolean())
-                        .enabled(faker.random().nextBoolean())
-                        .build())
-                .collect(Collectors.toList());
-
-    }
-
-    public List<Book> generateBooks() {
-
-        return IntStream.range(0, faker.random().nextInt(30, 60))
-                .mapToObj(i -> Book.builder()
-                        .title(faker.book().title())
-                        .authorName(faker.book().author())
-                        .isbn(faker.code().isbn10())
-                        .synopsis(faker.lorem().paragraph())
-                        .bookCoverUrl(faker.internet().image())
-                        .shareable(faker.random().nextBoolean())
-                        .archived(faker.random().nextBoolean())
-                        .build())
-                .collect(Collectors.toList());
-    }
-
 }

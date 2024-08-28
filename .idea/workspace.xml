@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/my-books/my-books.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/my-books/my-books.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/my-books/my-books.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/my-books/my-books.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/upload-book/upload-book.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/upload-book/upload-book.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/upload-book/upload-book.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/upload-book/upload-book.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/seeder/DatabaseSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/seeder/DatabaseSeeder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/book-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/book-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/book.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/book.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/components/book-card/book-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/components/book-card/book-card.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/components/menu/menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/components/menu/menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/book-list/book-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/book-list/book-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/book-list/book-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/book-list/book-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/my-books/my-books.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/my-books/my-books.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/upload-book/upload-book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/modules/book/pages/upload-book/upload-book.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/register/register.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +234,8 @@
       <workItem from="1724632015137" duration="994000" />
       <workItem from="1724674955878" duration="22538000" />
       <workItem from="1724767061392" duration="11895000" />
-      <workItem from="1724795230210" duration="7010000" />
+      <workItem from="1724795230210" duration="7676000" />
+      <workItem from="1724848888614" duration="7406000" />
     </task>
     <servers />
   </component>

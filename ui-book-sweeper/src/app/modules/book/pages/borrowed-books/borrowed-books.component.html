@@ -1,0 +1,36 @@
+<h1 class="text-2xl font-bold">Borrowed books</h1>
+<p-table [value]="borrowedBookResponse.content ?? []" [tableStyle]="{'min-width': '60rem'}">
+  <ng-template pTemplate="caption">
+    <div class="flex align-items-center justify-content-between">
+      Products
+      <p-button icon="pi pi-refresh" />
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Rate</th>
+      <th>Status</th>
+      <th><i class="pi pi-cog"></i></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-borrowedBook>
+    <tr>
+      <td>{{ borrowedBook.id }}</td>
+      <td>{{ borrowedBook.title }}</td>
+      <td>{{ borrowedBook.authorName }}</td>
+      <td>{{ borrowedBook.isbn }}</td>
+      <td><app-rating [rating]="borrowedBook.rate ?? 0"></app-rating></td>
+      <td>{{ borrowedBook.returned ? 'Returned' : 'Not returned' }}</td>
+      <td><button (click)="returnBorrowedBook(borrowedBook)" pButton icon="pi pi-send" label="Return book"></button></td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+      Total of {{ borrowedBookResponse.totalElements }} borrowed books.
+    </div>
+  </ng-template>
+</p-table>

@@ -34,7 +34,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
     NgOtpInputModule,
     MessagesModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
   ],
   providers: [
     HttpClient,

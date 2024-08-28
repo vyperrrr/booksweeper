@@ -48,15 +48,49 @@ export class MyBooksComponent implements OnInit {
     this.findMyBooks();
   }
 
-  archiveBook($event: BookResponse) {
-
+  archiveBook(book: BookResponse) {
+    this.bookService.updateArchivedAttribute({
+      bookId: book.id as number,
+    })
+      .subscribe(
+        {
+          next: () => {
+            book.archived = !book.archived;
+            this.messageService.add(
+              {
+                severity: 'info',
+                summary: 'Info',
+                detail: book.archived ? `${book.title} is now archived` : `${book.title} is no longer archived`
+              }
+            )
+          }
+        }
+      )
   }
 
-  shareBook($event: BookResponse) {
-
+  shareBook(book: BookResponse) {
+    this.bookService.updateShareableAttribute(
+      {
+        bookId: book.id as number,
+      }
+    )
+      .subscribe(
+        {
+          next: () => {
+            book.shareable = !book.shareable;
+            this.messageService.add(
+              {
+                severity: 'info',
+                summary: 'Info',
+                detail: book.shareable ? `${book.title} is now visible to other users` : `${book.title} is no longer visible to other users`
+              }
+            )
+          }
+        }
+      )
   }
 
-  editBook($event: BookResponse) {
-
+  editBook(book: BookResponse) {
+    this.router.navigate(['books', 'my-books', 'upload-book', book.id])
   }
 }

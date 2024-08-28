@@ -1,4 +1,4 @@
-<p-card header="{{ book.title }}" subheader="{{ book.authorName }}">
+<p-card  header="{{ book.title }}" subheader="{{ book.authorName }}">
   <ng-template pTemplate="header">
     <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
   </ng-template>
@@ -10,8 +10,22 @@
       </div>
       <div class="flex gap-2" *ngIf="showManagement">
         <p-button (click)="onEdit()" icon="pi pi-file-edit"></p-button>
-        <p-button (click)="onShare()" icon="pi pi-share-alt"></p-button>
-        <p-button (click)="onArchive()" icon="pi pi-lock"></p-button>
+        <button
+          (click)="onShare()"
+          pButton
+          pRipple
+          [class.p-button-success]="book.shareable"
+          icon="pi pi-share-alt"
+        >
+        </button>
+        <button
+          (click)="onArchive()"
+          pButton
+          pRipple
+          [class.p-button-danger]="book.archived"
+          [icon]="book.archived ? 'pi pi-unlock' : 'pi pi-lock-open'"
+        >
+        </button>
       </div>
       <div class="flex gap-2" *ngIf="!showManagement">
         <p-button (click)="onShowDetails()" icon="pi pi-info-circle"></p-button>

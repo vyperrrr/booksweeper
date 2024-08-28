@@ -20,6 +20,8 @@ import { UploadBookComponent } from './pages/upload-book/upload-book.component';
 import {CheckboxModule} from "primeng/checkbox";
 import {FileUploadModule} from "primeng/fileupload";
 import {InputTextareaModule} from "primeng/inputtextarea";
+import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
+import {TableModule} from "primeng/table";
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import {InputTextareaModule} from "primeng/inputtextarea";
     RatingComponent,
     MyBooksComponent,
     UploadBookComponent,
+    BorrowedBooksComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +49,8 @@ import {InputTextareaModule} from "primeng/inputtextarea";
     RippleModule,
     CheckboxModule,
     FileUploadModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TableModule
   ]
 })
 export class BookModule { }
