@@ -53,6 +53,13 @@ export class BorrowedBooksComponent implements OnInit {
             detail: 'Book returned successfully'
           });
           this.findAllBorrowedBooks();
+        },
+        error: (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error.error.error
+          });
         }
     })
   }

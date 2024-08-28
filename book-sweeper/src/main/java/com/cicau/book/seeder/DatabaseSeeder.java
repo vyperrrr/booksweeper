@@ -28,9 +28,11 @@ public class DatabaseSeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-            List<Role> roles = generateRoles();
+        roleRepository.deleteAll();
 
-            roleRepository.saveAll(roles);
+        List<Role> roles = generateRoles();
+
+        roleRepository.saveAll(roles);
 
     }
 

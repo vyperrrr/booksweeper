@@ -31,10 +31,6 @@ export class MenuComponent implements OnInit {
         }
       ]
     },
-    {
-      label: 'Waiting list',
-      icon: 'pi pi-fw pi-clock',
-    }
   ];
 
   ngOnInit(): void {

@@ -1,8 +1,8 @@
 <div class="card">
   <p-toast></p-toast>
 </div>
-<div class="grid">
-  <div class="col-3" *ngFor="let book of bookResponse.content">
+<div class="grid mx-auto justify-content-center row-gap-2 mt-2">
+  <div class="md:col-6 lg:col-4 xl:col-3" *ngFor="let book of bookResponse.content">
     <app-book-card [book]="book" (borrow)="borrowBook(book)"></app-book-card>
   </div>
 </div>
