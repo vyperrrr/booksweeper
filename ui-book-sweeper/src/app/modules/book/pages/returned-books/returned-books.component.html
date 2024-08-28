@@ -1,0 +1,33 @@
+<h1 class="text-2xl font-bold">Returned books</h1>
+<p-table [value]="returnedBookResponse.content ?? []" [tableStyle]="{'min-width': '60rem'}">
+  <ng-template pTemplate="caption">
+    Books
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Rate</th>
+      <th>Status</th>
+      <th><i class="pi pi-cog"></i></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-returnedBook>
+    <tr>
+      <td>{{ returnedBook.id }}</td>
+      <td>{{ returnedBook.title }}</td>
+      <td>{{ returnedBook.authorName }}</td>
+      <td>{{ returnedBook.isbn }}</td>
+      <td><app-rating [rating]="returnedBook.rate ?? 0"></app-rating></td>
+      <td>{{ returnedBook.returned ? 'Returned' : 'Not returned' }}</td>
+      <td><button (click)="approveBookReturn(returnedBook)" pButton icon="pi pi-check-circle" label="Approve return"></button></td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+      Total of {{ returnedBookResponse.totalElements }} returned books.
+    </div>
+  </ng-template>
+</p-table>

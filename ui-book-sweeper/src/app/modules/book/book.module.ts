@@ -22,6 +22,7 @@ import {FileUploadModule} from "primeng/fileupload";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import {TableModule} from "primeng/table";
+import { ReturnedBooksComponent } from './pages/returned-books/returned-books.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {TableModule} from "primeng/table";
     MyBooksComponent,
     UploadBookComponent,
     BorrowedBooksComponent,
+    ReturnedBooksComponent,
   ],
   imports: [
     CommonModule,

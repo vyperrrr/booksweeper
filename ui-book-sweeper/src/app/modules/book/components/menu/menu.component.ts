@@ -27,6 +27,7 @@ export class MenuComponent implements OnInit {
         },
         {
           label: 'Returned books',
+          routerLink: 'returned-books',
         }
       ]
     },

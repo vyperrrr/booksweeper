@@ -1,10 +1,7 @@
 <h1 class="text-2xl font-bold">Borrowed books</h1>
 <p-table [value]="borrowedBookResponse.content ?? []" [tableStyle]="{'min-width': '60rem'}">
   <ng-template pTemplate="caption">
-    <div class="flex align-items-center justify-content-between">
-      Products
-      <p-button icon="pi pi-refresh" />
-    </div>
+      Books
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
