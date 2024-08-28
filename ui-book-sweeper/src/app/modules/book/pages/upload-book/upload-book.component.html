@@ -31,7 +31,7 @@
           it.</small>
       </div>
       <div>
-        <p-fileUpload [customUpload]="true" (uploadHandler)="handleFileUpload($event)" [fileLimit]="1"
+        <p-fileUpload [customUpload]="true" [showUploadButton]="false" (onSelect)="handleFileUpload($event)" [fileLimit]="1"
                       accept="image/*">
           <ng-template pTemplate="content">
           </ng-template>

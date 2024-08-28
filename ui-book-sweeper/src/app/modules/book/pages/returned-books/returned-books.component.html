@@ -14,7 +14,7 @@
       <th>ISBN</th>
       <th>Rate</th>
       <th>Status</th>
-      <th><i class="pi pi-cog"></i></th>
+      <th>Actions</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-returnedBook>
@@ -24,8 +24,8 @@
       <td>{{ returnedBook.authorName }}</td>
       <td>{{ returnedBook.isbn }}</td>
       <td><app-rating [rating]="returnedBook.rate ?? 0"></app-rating></td>
-      <td>{{ returnedBook.returned ? 'Returned' : 'Not returned' }}</td>
-      <td><button (click)="approveBookReturn(returnedBook)" pButton icon="pi pi-check-circle" label="Approve return"></button></td>
+      <td>{{ getApprovalStatus(returnedBook) }}</td>
+      <td><button [disabled]="returnedBook.returnApproved" (click)="approveBookReturn(returnedBook)" pButton icon="pi pi-check-circle" label="Approve return"></button></td>
     </tr>
   </ng-template>
   <ng-template pTemplate="summary">

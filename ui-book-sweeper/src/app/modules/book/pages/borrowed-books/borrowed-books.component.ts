@@ -3,6 +3,9 @@ import {PageResponseBorrowedBookResponse} from "../../../../api/models/page-resp
 import {BookService} from "../../../../api/services/book.service";
 import {BookResponse} from "../../../../api/models/book-response";
 import {MessageService} from "primeng/api";
+import {BorrowedBookResponse} from "../../../../api/models/borrowed-book-response";
+import {FeedbackRequest} from "../../../../api/models/feedback-request";
+import {FeedbackService} from "../../../../api/services/feedback.service";
 
 @Component({
   selector: 'app-borrowed-books',
@@ -17,9 +20,18 @@ export class BorrowedBooksComponent implements OnInit {
 
   borrowedBookResponse: PageResponseBorrowedBookResponse = {};
 
+  selectedBook: BookResponse | undefined = undefined;
+
+  feedbackRequest: FeedbackRequest = {
+    bookId: 0,
+    comment: '',
+    rate: undefined,
+  }
+
   constructor(
     private bookService: BookService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private feedbackService: FeedbackService
   ) {
   }
 
@@ -41,26 +53,51 @@ export class BorrowedBooksComponent implements OnInit {
       })
   }
 
-  returnBorrowedBook(book: BookResponse) {
+  returnBorrowedBook(book: BorrowedBookResponse) {
+    this.selectedBook = book;
+    this.feedbackRequest.bookId = book.id as number;
+  }
+
+  returnBook(withFeedback: boolean) {
     this.bookService.returnBook({
-      bookId: book.id as number,
-    })
-      .subscribe({
-        next: () => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Book returned successfully'
-          });
-          this.findAllBorrowedBooks();
-        },
-        error: (error) => {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Error',
-            detail: error.error.error
-          });
+      bookId: this.selectedBook?.id as number
+    }).subscribe({
+      next: () => {
+        if (withFeedback) {
+          this.giveFeedback();
         }
-    })
+        this.selectedBook = undefined;
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Book returned successfully'
+        });
+        this.findAllBorrowedBooks();
+      },
+      error: (error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: error.error.error
+        });
+      }
+    });
+  }
+
+  private giveFeedback() {
+    this.feedbackService.saveFeedback({
+      body: this.feedbackRequest
+    }).subscribe({
+      next: () => {
+      }
+    });
+  }
+
+  getReturnStatus(book: BorrowedBookResponse) {
+    if (!book.returned)
+      return 'Not yet returned';
+    if (book.returned && !book.returnApproved)
+      return 'Returned';
+    return 'Returned and return approved';
   }
 }

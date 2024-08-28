@@ -3,6 +3,7 @@ import {PageResponseBorrowedBookResponse} from "../../../../api/models/page-resp
 import {BookService} from "../../../../api/services/book.service";
 import {MessageService} from "primeng/api";
 import {BookResponse} from "../../../../api/models/book-response";
+import {BorrowedBookResponse} from "../../../../api/models/borrowed-book-response";
 
 @Component({
   selector: 'app-returned-books',
@@ -62,5 +63,9 @@ export class ReturnedBooksComponent implements OnInit {
           });
         }
       })
+  }
+
+  getApprovalStatus(returnedBook: BorrowedBookResponse) {
+    return returnedBook.returnApproved ? 'Return approved' : 'Return not approved'
   }
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {CommonModule} from '@angular/common';
 
 import { BookRoutingModule } from './book-routing.module';
 import { MainComponent } from './pages/main/main.component';
@@ -23,6 +23,8 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import {TableModule} from "primeng/table";
 import { ReturnedBooksComponent } from './pages/returned-books/returned-books.component';
+import {RatingModule} from "primeng/rating";
+import {SliderModule} from "primeng/slider";
 
 
 @NgModule({
@@ -43,7 +45,6 @@ import { ReturnedBooksComponent } from './pages/returned-books/returned-books.co
     MenubarModule,
     ButtonModule,
     InputTextModule,
-    NgOptimizedImage,
     CardModule,
     StyleClassModule,
     PaginatorModule,
@@ -52,7 +53,9 @@ import { ReturnedBooksComponent } from './pages/returned-books/returned-books.co
     CheckboxModule,
     FileUploadModule,
     InputTextareaModule,
-    TableModule
+    TableModule,
+    RatingModule,
+    SliderModule,
   ]
 })
 export class BookModule { }

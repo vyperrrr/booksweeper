@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BookResponse} from "../../../../api/models/book-response";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-book-card',
@@ -18,6 +19,7 @@ export class BookCardComponent {
   @Input()
   set book(book: BookResponse) {
     this._book = book;
+    console.log(book.bookCoverUrl);
   }
 
   get showManagement() {

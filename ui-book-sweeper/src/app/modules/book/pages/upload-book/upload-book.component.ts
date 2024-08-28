@@ -86,27 +86,27 @@ export class UploadBookComponent implements OnInit {
                     this.messageService.add({
                       severity: 'success',
                       summary: 'Success',
-                      detail: 'Book uploaded successfully'
+                      detail: 'Book with image uploaded successfully'
                     });
                   },
                   error: (error) => {
                     this.messageService.add({
                       severity: 'error',
                       summary: 'Error',
-                      detail: error.error.validationErrors
+                      detail: 'Book uploaded successfully, but image upload failed'
                     });
                   }
                 }
               )
           },
           error: (error) => {
-            this.messageService.add({severity: 'error', summary: 'Error', detail: error.error.validationErrors});
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Book upload failed, make sure all fields are filled'});
           }
         }
       )
   }
 
   cancelUploadBook() {
-
+    this.router.navigate(['/books/my-books']);
   }
 }
