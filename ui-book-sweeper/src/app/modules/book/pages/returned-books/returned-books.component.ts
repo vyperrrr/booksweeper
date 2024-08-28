@@ -53,6 +53,13 @@ export class ReturnedBooksComponent implements OnInit {
             detail: 'Book return approved'
           });
           this.findAllReturnedBooks();
+        },
+        error: (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error.error.error
+          });
         }
       })
   }

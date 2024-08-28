@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AuthenticateComponent} from "./authenticate/authenticate.component";
 import {RegisterComponent} from "./register/register.component";
 import {ActivateAccountComponent} from "./activate-account/activate-account.component";
+import {authGuard} from "./services/guard/auth.guard";
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'books',
-    loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule)
+    loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule),
+    canActivate: [authGuard]
   }
 ];
 
