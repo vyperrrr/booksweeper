@@ -24,13 +24,22 @@ services:
         MAILDEV_IP: "::"
   bs-api:
     container_name: bs-api
-    image: bs/bs:1.0.0
+    image: bs/bs:1.0.4
     ports:
-      - 8080:8080
+      - 8088:8088
     networks:
         - spring-demo
     depends_on:
       - postgres
+  bs-ui:
+    container_name: bs-ui
+    image: uibs/uibs:1.0.0
+    ports:
+      - 8080:80
+    networks:
+        - spring-demo
+    depends_on:
+      - bs-api
 
 networks:
   spring-demo:

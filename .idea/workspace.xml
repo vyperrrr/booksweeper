@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de64002a-ca1e-42e8-9415-6af929815b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker/backend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-book-sweeper/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/BeansConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/BeansConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/config/OpenApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/email/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/email/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/java/com/cicau/book/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-sweeper/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/book-sweeper/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/app/api/api-configuration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/app/api/api-configuration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-book-sweeper/src/openapi/openapi.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-book-sweeper/src/openapi/openapi.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="npm.openapi-gen" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +239,9 @@
       <workItem from="1724767061392" duration="11895000" />
       <workItem from="1724795230210" duration="7676000" />
       <workItem from="1724848888614" duration="22697000" />
-      <workItem from="1724936405612" duration="5850000" />
+      <workItem from="1724936405612" duration="7414000" />
+      <workItem from="1724946744848" duration="8098000" />
+      <workItem from="1724966082356" duration="37000" />
     </task>
     <servers />
   </component>

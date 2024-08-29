@@ -9,12 +9,12 @@ RUN mvn clean package -DskipTests
 ## Runtime stage
 FROM amazoncorretto:17
 ARG PROFILE=dev
-ARG APP_VERSION=1.0.0
+ARG APP_VERSION=1.0.4
 
 WORKDIR /app
 COPY --from=build /build/target/book-sweeper-*.jar /app/
 
-EXPOSE 8080
+EXPOSE 8088
 
 ENV DB_URL=jdbc:postgresql://postgres-sql-bs:5432/book_sweeper
 ENV ACTIVE_PROFILE=${PROFILE}
