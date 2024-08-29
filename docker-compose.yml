@@ -22,6 +22,16 @@ services:
       - 1025:1025
     environment:
         MAILDEV_IP: "::"
+  bs-api:
+    container_name: bs-api
+    image: bs/bs:1.0.0
+    ports:
+      - 8080:8080
+    networks:
+        - spring-demo
+    depends_on:
+      - postgres
+
 networks:
   spring-demo:
     driver: bridge
