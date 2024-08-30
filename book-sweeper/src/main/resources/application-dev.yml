@@ -14,10 +14,10 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   mail:
-    host: smtp.gmail.com
+    host: ${EMAIL_HOSTNAME}
     port: 465
-    #username: example@gmail.com
-    #password: password
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -31,11 +31,13 @@ spring:
 application:
   security:
     jwt:
-      secret-key: 3cab0e68b3f78e0f00dcb9da9fd2a6cf9428222695c3d370558156adacab8c9d
+      secret-key: ${JWT_SECRET_KEY}
       expiration: 86400000
   mailing:
     frontend:
       activation-url: http://localhost:4200/activate-account
+  cors:
+    origins: http://localhost:4200,http://localhost:8080
 server:
   port: 8088
   servlet:
@@ -45,14 +47,11 @@ server:
 aws:
   access:
     key:
-      id: AKIAVRUVSR5EZ26MJETX
+      id: ${AWS_ACCESS_KEY_ID}
   secret:
     access:
-      key: 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
+      key: ${AWS_SECRET_ACCESS_KEY}
   s3:
     region: eu-north-1
     bucket:
       name: direct-upload-booksweeper-bucket
-  java:
-    v1:
-      disableDeprecationAnnouncement: true
