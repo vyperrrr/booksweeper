@@ -113,6 +113,11 @@ jobs:
     runs-on: [self-hosted]
     name: Deploy to AWS
     steps:
+      - name: Login to dockerhub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Pull the image from dockerhub
         run: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/book-sweeper-backend:${{ steps.extract_version.outputs.VERSION }}
