@@ -116,6 +116,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: docker-compose.yml
+          path: docker-compose.yml
   deploy:
     needs: [build-image]
     runs-on: [self-hosted]
