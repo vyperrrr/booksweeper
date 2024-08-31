@@ -133,7 +133,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Pull the image from dockerhub
         run: |
-          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/book-sweeper-backend:${{ steps.extract_version.outputs.VERSION }}
+          sudo docker pull cicau/book-sweeper-backend:1.0.4
       - name: Download docker-compose from artifacts
         uses: actions/download-artifact@v3
         with:
