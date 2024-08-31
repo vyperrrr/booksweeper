@@ -112,6 +112,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Upload artifacts
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Upload docker compose
         uses: actions/upload-artifact@v2
         with:
