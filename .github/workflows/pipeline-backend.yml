@@ -108,8 +108,16 @@ jobs:
             PROFILE=dev
             APP_VERSION=${{ steps.extract_version.outputs.VERSION }}
 
+  upload-artifacts:
+    runs-on: ubuntu-latest
+    name: Upload artifacts
+    steps:
+      - name: Upload docker compose
+        uses: actions/upload-artifact@v2
+        with:
+          name: docker-compose.yml
   deploy:
-    needs: [build, build-image]
+    needs: [build-image]
     runs-on: [self-hosted]
     name: Deploy to AWS
     steps:
@@ -120,12 +128,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Pull the image from dockerhub
         run: |
-          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/book-sweeper-backend:${{ steps.extract_version.outputs.VERSION }}
-      - name: Upload docker-compose.yml to artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: docker-compose.yml
-          path: docker-compose.yml
+          sudo docker pull cicau/book-sweeper-backend:1.0.4
       - name: Download docker-compose from artifacts
         uses: actions/download-artifact@v3
         with:
