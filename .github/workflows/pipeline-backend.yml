@@ -110,7 +110,7 @@ jobs:
 
   deploy:
     needs: [build, build-image]
-    runs-on: [aws-ec2]
+    runs-on: [self-hosted]
     name: Deploy to AWS
     steps:
       - name: Pull the image from dockerhub
