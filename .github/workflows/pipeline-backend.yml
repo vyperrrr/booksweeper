@@ -140,4 +140,4 @@ jobs:
           name: docker-compose.yml
       - name: Deploy containers with docker-compose
         run: |
-          sudo docker-compose up -d --build
+          sudo docker-compose up -d
