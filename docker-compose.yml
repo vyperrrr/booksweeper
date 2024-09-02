@@ -24,7 +24,7 @@ services:
         MAILDEV_IP: "::"
   bs-api:
     container_name: bs-api
-    image: bs/bs:1.0.4
+    image: cicau/book-sweeper-backend:1.0.4
     ports:
       - 8088:8088
     networks:
