@@ -108,36 +108,22 @@ jobs:
             PROFILE=dev
             APP_VERSION=${{ steps.extract_version.outputs.VERSION }}
 
-  upload-artifacts:
-    runs-on: ubuntu-latest
-    name: Upload artifacts
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Upload docker compose
-        uses: actions/upload-artifact@v2
-        with:
-          name: docker-compose.yml
-          path: docker-compose.yml
   deploy:
     needs: [build-image]
-    runs-on: [self-hosted]
-    name: Deploy to AWS
+    runs-on: ubuntu-latest
+    name: Deploy to AWS EC2
     steps:
-      - name: Login to dockerhub
-        uses: docker/login-action@v3
+      - name: AWS SSM Send-Command
+        uses: peterkimzz/aws-ssm-send-command@v1.1.1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Pull the image from dockerhub
-        run: |
-          sudo docker pull cicau/book-sweeper-backend:1.0.4
-      - name: Download docker-compose from artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: docker-compose.yml
-      - name: Deploy containers with docker-compose
-        run: |
-          sudo docker-compose up -d
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          instance-ids: ${{ secrets.AWS_INSTANCE_ID }}
+          working-directory: /home/ec2-user
+          command: |
+            sudo docker-compose stop
+            sudo docker-compose rm -f
+            sudo docker-compose pull
+            sudo docker-compose up -d
+            sudo docker image prune -af
