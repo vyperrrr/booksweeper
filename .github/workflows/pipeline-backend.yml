@@ -111,7 +111,7 @@ jobs:
   deploy:
     needs: [build-image]
     runs-on: ubuntu-latest
-    name: Deploy to AWS EC2
+    name: Deploy to AWS
     steps:
       - name: AWS SSM Send-Command
         uses: peterkimzz/aws-ssm-send-command@v1.1.1
