@@ -33,7 +33,7 @@ services:
       - postgres
   bs-ui:
     container_name: bs-ui
-    image: uibs/uibs:1.0.0
+    image: cicau/book-sweeper-frontend:0.0.0
     ports:
       - 8080:80
     networks:

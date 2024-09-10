@@ -13,24 +13,39 @@ spring:
         format_sql: true
     database: postgresql
   mail:
-    host: ${EMAIL_HOSTNAME}
-    port: 465
-    username: ${EMAIL_USERNAME}
-    password: ${EMAIL_PASSWORD}
+    host: localhost
+    port: 1025
+    username: cicau
+    password: cicau
     properties:
       mail:
         smtp:
-          auth: true
-          ssl:
-            enable: true
-            trust: "*"
+          trust: "*"
+        auth: true
         starttls:
           enable: true
-    protocol: smtp
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+#    host: ${EMAIL_HOSTNAME}
+#    port: 465
+#    username: ${EMAIL_USERNAME}
+#    password: ${EMAIL_PASSWORD}
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          ssl:
+#            enable: true
+#            trust: "*"
+#        starttls:
+#          enable: true
+#    protocol: smtp
 application:
   security:
     jwt:
-      secret-key: ${JWT_SECRET_KEY}
+#      secret-key: ${JWT_SECRET_KEY}
+      secret-key: g0ppWGtgAWTww2mBGZ8wNw==MpF6TAt7f6z6m85JUgpk8MrS/4l96qfMlU7aGiSY
       expiration: 86400000
   mailing:
     frontend:
@@ -46,10 +61,10 @@ server:
 aws:
   access:
     key:
-      id: ${AWS_ACCESS_KEY_ID}
+#      id: ${AWS_ACCESS_KEY_ID}
   secret:
     access:
-      key: ${AWS_SECRET_ACCESS_KEY}
+#      key: ${AWS_SECRET_ACCESS_KEY}
   s3:
     region: eu-north-1
     bucket:
